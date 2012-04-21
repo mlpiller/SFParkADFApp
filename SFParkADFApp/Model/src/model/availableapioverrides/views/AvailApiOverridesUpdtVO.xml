@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AvailApiOverridesUpdtVO"
+  Version="11.1.1.60.13"
+  SelectList="AvailApiOverridesEO.ID, 
+       AvailApiOverridesEO.CREATED_DT, 
+       AvailApiOverridesEO.LAST_UPD_DT, 
+       AvailApiOverridesEO.LAST_UPD_USER, 
+       AvailApiOverridesEO.LAST_UPD_PGM"
+  FromList="AVAIL_API_OVERRIDES AvailApiOverridesEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="AvailApiOverridesEO"
+    Entity="model.availableapioverrides.entities.AvailApiOverridesEO"/>
+  <ViewAttribute
+    Name="Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Id"
+    EntityUsage="AvailApiOverridesEO"
+    AliasName="ID"/>
+  <ViewAttribute
+    Name="CreatedDt"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDt"
+    EntityUsage="AvailApiOverridesEO"
+    AliasName="CREATED_DT"/>
+  <ViewAttribute
+    Name="LastUpdDt"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdDt"
+    EntityUsage="AvailApiOverridesEO"
+    AliasName="LAST_UPD_DT"/>
+  <ViewAttribute
+    Name="LastUpdUser"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdUser"
+    EntityUsage="AvailApiOverridesEO"
+    AliasName="LAST_UPD_USER"/>
+  <ViewAttribute
+    Name="LastUpdPgm"
+    PrecisionRule="true"
+    EntityAttrName="LastUpdPgm"
+    EntityUsage="AvailApiOverridesEO"
+    AliasName="LAST_UPD_PGM"/>
+  <ViewAttribute
+    Name="SelectedAvailApiOverride"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Boolean"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="BIT"/>
+</ViewObject>

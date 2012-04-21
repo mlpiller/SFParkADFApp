@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="model.availableapioverrides.services.AvailApiOverridesAM">
+      <AppModuleConfig name="135B118B4AC" DBconnection="java:comp/env/jdbc/SFParkADFDS" ApplicationName="model.availableapioverrides.services.AvailApiOverridesAM" DeployPlatform="LOCAL" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" JDBCName="SFParkADF" BC4JConfigName="AvailApiOverridesAMLocal" jbo.project="model.Model">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="Oracle" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="model.availableapioverrides.services.AvailApiOverridesAM"/>
+         <Tester FullProxyInterfaceName="model.availableapioverrides.services.common.AvailApiOverridesAM"/>
+         <Custom LastUsedConfiguration="AvailApiOverridesAMLocal" JDBCDataSource="java:comp/env/jdbc/SFParkADFDS"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

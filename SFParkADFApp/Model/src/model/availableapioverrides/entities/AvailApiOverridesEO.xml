@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AvailApiOverridesEO"
+  Version="11.1.1.60.13"
+  DBObjectType="table"
+  DBObjectName="AVAIL_API_OVERRIDES"
+  AliasName="AvailApiOverridesEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="AVAIL_API_OVERRIDES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDt"
+    ColumnName="CREATED_DT"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="AVAIL_API_OVERRIDES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdDt"
+    ColumnName="LAST_UPD_DT"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="AVAIL_API_OVERRIDES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdUser"
+    Precision="30"
+    ColumnName="LAST_UPD_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AVAIL_API_OVERRIDES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdPgm"
+    Precision="30"
+    ColumnName="LAST_UPD_PGM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AVAIL_API_OVERRIDES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="PmDistrictsEO"
+    Association="model.availableapioverrides.entities.AaoPmDistrictsAssoc"
+    AssociationEnd="model.availableapioverrides.entities.AaoPmDistrictsAssoc.PmDistrictsEO"
+    AssociationOtherEnd="model.availableapioverrides.entities.AaoPmDistrictsAssoc.AvailApiOverridesEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="OspInventoryEO"
+    Association="model.availableapioverrides.entities.AaoOspInventoryAssoc"
+    AssociationEnd="model.availableapioverrides.entities.AaoOspInventoryAssoc.OspInventoryEO"
+    AssociationOtherEnd="model.availableapioverrides.entities.AaoOspInventoryAssoc.AvailApiOverridesEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="BlocksEO"
+    Association="model.availableapioverrides.entities.AaoBlocksAssoc"
+    AssociationEnd="model.availableapioverrides.entities.AaoBlocksAssoc.BlocksEO"
+    AssociationOtherEnd="model.availableapioverrides.entities.AaoBlocksAssoc.AvailApiOverridesEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="BlockfacesEO"
+    Association="model.availableapioverrides.entities.AaoBockfacesAssoc"
+    AssociationEnd="model.availableapioverrides.entities.AaoBockfacesAssoc.BlockfacesEO"
+    AssociationOtherEnd="model.availableapioverrides.entities.AaoBockfacesAssoc.AvailApiOverridesEO"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="AvailApiOverridesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="AVAIL_API_OVERRIDES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="model.availableapioverrides.entities.AvailApiOverridesEO.Id"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0074163">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0074163"/>
+      <Attr Name="_checkCondition" Value='"ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="model.availableapioverrides.entities.AvailApiOverridesEO.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

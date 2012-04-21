@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.60.13"
+                id="duplicateParkingSpace_btf_duplicateParkingSpace_btf_ExecuteWithParamsPageDef"
+                Package="view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="ParkingSpaceQueryByParkingSpaceIdROView1" RangeSize="25"
+              DataControl="DuplicateParkingSpaceAMDataControl"
+              id="ParkingSpaceQueryByParkingSpaceIdROView1Iterator"
+              Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="ParkingSpaceQueryByParkingSpaceIdROView1Iterator"
+            id="ExecuteWithParams" RequiresUpdateModel="true"
+            Action="executeWithParams">
+      <NamedData NDName="parkingSpaceId"
+                 NDValue="#{pageFlowScope.parkingSpaceId}"
+                 NDType="java.lang.Integer"/>
+    </action>
+  </bindings>
+</pageDefinition>

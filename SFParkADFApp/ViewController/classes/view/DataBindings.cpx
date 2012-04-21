@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.60.13" id="DataBindings" SeparateXMLFiles="false"
+             Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/WEB-INF/duplicateParkingSpace-btf.xml#duplicateParkingSpace-btf@ExecuteWithParams"
+          usageId="view_duplicateParkingSpace_btf_duplicateParkingSpace_btf_ExecuteWithParamsPageDef"/>
+    <page path="/DuplicateParkingSpacePage.jspx"
+          usageId="view_DuplicateParkingSpacePagePageDef"/>
+    <page path="/WEB-INF/duplicateParkingSpace-btf.xml#duplicateParkingSpace-btf@CallDuplicateParkingSpace"
+          usageId="view_duplicateParkingSpace_btf_duplicateParkingSpace_btf_CallDuplicateParkingSpacePageDef"/>
+    <page path="/ManageAvailableApiOverridesPage.jspx"
+          usageId="view_ManageAvailableApiOverridesPagePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_duplicateParkingSpace_btf_duplicateParkingSpace_btf_ExecuteWithParamsPageDef"
+          path="view.pageDefs.duplicateParkingSpace_btf_duplicateParkingSpace_btf_ExecuteWithParamsPageDef"/>
+    <page id="view_DuplicateParkingSpacePagePageDef"
+          path="view.pageDefs.DuplicateParkingSpacePagePageDef"/>
+    <page id="view_duplicateParkingSpace_btf_duplicateParkingSpace_btf_CallDuplicateParkingSpacePageDef"
+          path="view.pageDefs.duplicateParkingSpace_btf_duplicateParkingSpace_btf_CallDuplicateParkingSpacePageDef"/>
+    <page id="view_ManageAvailableApiOverridesPagePageDef"
+          path="view.pageDefs.ManageAvailableApiOverridesPagePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="DuplicateParkingSpaceAMDataControl"
+                     Package="model.duplicateparkingspace.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="DuplicateParkingSpaceAMLocal"
+                     syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="AvailApiOverridesAMDataControl"
+                     Package="model.availableapioverrides.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="AvailApiOverridesAMLocal"
+                     syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

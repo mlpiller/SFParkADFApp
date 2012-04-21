@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AvailApiBlocksVwRoVO"
+  Version="11.1.1.60.13"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="model.availableapioverrides.views.AvailApiBlocksVwRoVORowImpl"
+  ComponentClass="model.availableapioverrides.views.AvailApiBlocksVwRoVOImpl"
+  RowInterface="model.availableapioverrides.views.common.AvailApiBlocksVwRoVORow"
+  ClientRowProxyName="model.availableapioverrides.views.client.AvailApiBlocksVwRoVORowClient">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <SQLQuery>
+    <![CDATA[SELECT AvailApiBlocksVw.BLOCK_ID,
+       AvailApiBlocksVw.DESCRIPTION,
+       AvailApiBlocksVw.ROWID
+FROM AVAIL_API_BLOCKS_VW AvailApiBlocksVw]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="BlockId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="BLOCK_ID"
+    Expression="BLOCK_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="71"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="DESCRIPTION"
+    Expression="DESCRIPTION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="71"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RowID"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.RowID"
+    ColumnType="ROWID"
+    AliasName="ROWID"
+    Expression="ROWID"
+    SQLType="ROWID"/>
+  <ViewAttribute
+    Name="SelectedBlock"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Boolean"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="BIT"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="RowID"/>
+  </AttrArray>
+</ViewObject>

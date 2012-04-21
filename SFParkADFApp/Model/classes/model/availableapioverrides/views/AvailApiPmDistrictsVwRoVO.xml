@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AvailApiPmDistrictsVwRoVO"
+  Version="11.1.1.60.13"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  RowClass="model.availableapioverrides.views.AvailApiPmDistrictsVwRoVORowImpl"
+  ComponentClass="model.availableapioverrides.views.AvailApiPmDistrictsVwRoVOImpl"
+  RowInterface="model.availableapioverrides.views.common.AvailApiPmDistrictsVwRoVORow"
+  ClientRowProxyName="model.availableapioverrides.views.client.AvailApiPmDistrictsVwRoVORowClient"
+  FetchMode="FETCH_ALL"
+  FetchSize="300">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|VarAccess"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <SQLQuery>
+    <![CDATA[SELECT AvailApiPmDistrictsVw.PM_DISTRICT_ID,
+       AvailApiPmDistrictsVw.PM_DISTRICT_NAME,
+       AvailApiPmDistrictsVw.ROWID
+FROM AVAIL_API_PM_DISTRICTS_VW AvailApiPmDistrictsVw]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="PmDistrictId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="PM_DISTRICT_ID"
+    Expression="PM_DISTRICT_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PmDistrictName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="20"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PM_DISTRICT_NAME"
+    Expression="PM_DISTRICT_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RowID"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.RowID"
+    ColumnType="ROWID"
+    AliasName="ROWID"
+    Expression="ROWID"
+    SQLType="ROWID"/>
+  <ViewAttribute
+    Name="SelectedPmDistrict"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Boolean"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="BIT"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="RowID"/>
+  </AttrArray>
+</ViewObject>

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.60.13"
+                id="ManageAvailableApiOverridesPagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AAOJoinedUpdtVO1" RangeSize="300"
+              DataControl="AvailApiOverridesAMDataControl"
+              id="AAOJoinedUpdtVO1Iterator"/>
+    <searchRegion Binds="AAOJoinedUpdtVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="AAOJoinedUpdtVO1Query"/>
+    <iterator Binds="AvailApiPmDistrictsVwRoVO1" RangeSize="300"
+              DataControl="AvailApiOverridesAMDataControl"
+              id="AvailApiPmDistrictsVwRoVO1Iterator"/>
+    <iterator Binds="AvailApiOspInventoryVwRoVO1" RangeSize="300"
+              DataControl="AvailApiOverridesAMDataControl"
+              id="AvailApiOspInventoryVwRoVO1Iterator"/>
+    <iterator Binds="AvailApiBlocksVwRoVO1" RangeSize="25"
+              DataControl="AvailApiOverridesAMDataControl"
+              id="AvailApiBlocksVwRoVO1Iterator"/>
+    <iterator Binds="AvailApiBlockfacesVwRoVO1" RangeSize="300"
+              DataControl="AvailApiOverridesAMDataControl"
+              id="AvailApiBlockfacesVwRoVO1Iterator"/>
+    <searchRegion Binds="AvailApiBlockfacesVwRoVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="AvailApiBlockfacesVwRoVO11Query"/>
+    <searchRegion Binds="AvailApiBlocksVwRoVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="AvailApiBlocksVwRoVO1Query"/>
+    <invokeAction id="aao_tbl" Binds="Commit"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="AAOJoinedUpdtVO1Iterator" id="AAOJoinedUpdtVO1">
+      <nodeDefinition DefName="model.availableapioverrides.views.AAOJoinedUpdtVO"
+                      Name="AAOJoinedUpdtVO10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Description"/>
+          <Item Value="SelectedForDeletion" Binds="SelectedForDeletion"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="AAOJoinedUpdtVO1Iterator" id="SelectedForDeletion"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="SelectedForDeletion"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <tree IterBinding="AvailApiPmDistrictsVwRoVO1Iterator"
+          id="AvailApiPmDistrictsVwRoVO1">
+      <nodeDefinition DefName="model.availableapioverrides.views.AvailApiPmDistrictsVwRoVO"
+                      Name="AvailApiPmDistrictsVwRoVO10">
+        <AttrNames>
+          <Item Value="PmDistrictId"/>
+          <Item Value="PmDistrictName"/>
+          <Item Value="SelectedPmDistrict" Binds="SelectedPmDistrict"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="AvailApiPmDistrictsVwRoVO1Iterator"
+            id="SelectedPmDistrict" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="SelectedPmDistrict"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <tree IterBinding="AvailApiOspInventoryVwRoVO1Iterator"
+          id="AvailApiOspInventoryVwRoVO1">
+      <nodeDefinition DefName="model.availableapioverrides.views.AvailApiOspInventoryVwRoVO"
+                      Name="AvailApiOspInventoryVwRoVO10">
+        <AttrNames>
+          <Item Value="OspId"/>
+          <Item Value="FacilityName"/>
+          <Item Value="SelectedOspInventory" Binds="SelectedOspInventory"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="AvailApiOspInventoryVwRoVO1Iterator"
+            id="SelectedOspInventory" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="SelectedOspInventory"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <button IterBinding="AvailApiBlocksVwRoVO1Iterator" id="Description"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <tree IterBinding="AvailApiBlockfacesVwRoVO1Iterator"
+          id="AvailApiBlockfacesVwRoVO1">
+      <nodeDefinition DefName="model.availableapioverrides.views.AvailApiBlockfacesVwRoVO"
+                      Name="AvailApiBlockfacesVwRoVO10">
+        <AttrNames>
+          <Item Value="BlockfaceId"/>
+          <Item Value="Description"/>
+          <Item Value="SelectedBlockface" Binds="SelectedBlockface"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="AvailApiBlockfacesVwRoVO1Iterator"
+            id="SelectedBlockface" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="SelectedBlockface"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="AvailApiOverridesAMDataControl"/>
+    <tree IterBinding="AvailApiBlockfacesVwRoVO1Iterator"
+          id="AvailApiBlockfacesVwRoVO11">
+      <nodeDefinition DefName="model.availableapioverrides.views.AvailApiBlockfacesVwRoVO"
+                      Name="AvailApiBlockfacesVwRoVO110">
+        <AttrNames>
+          <Item Value="BlockfaceId"/>
+          <Item Value="Description"/>
+          <Item Value="SelectedBlockface"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="AvailApiBlocksVwRoVO1Iterator"
+          id="AvailApiBlocksVwRoVO1">
+      <nodeDefinition DefName="model.availableapioverrides.views.AvailApiBlocksVwRoVO"
+                      Name="AvailApiBlocksVwRoVO10">
+        <AttrNames>
+          <Item Value="SelectedBlock"/>
+          <Item Value="BlockId"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="AAOJoinedUpdtVO1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

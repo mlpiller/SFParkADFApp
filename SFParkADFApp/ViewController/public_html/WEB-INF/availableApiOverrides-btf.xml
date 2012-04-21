@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="availableApiOverrides-btf">
+    <default-activity id="__2">ManageAvailableApiOverrides</default-activity>
+    <managed-bean id="__6">
+      <managed-bean-name id="__4">AAOBackingBean</managed-bean-name>
+      <managed-bean-class id="__1">availableapioverrides.backing.AAOBackingBean</managed-bean-class>
+      <managed-bean-scope id="__5">request</managed-bean-scope>
+    </managed-bean>
+    <view id="ManageAvailableApiOverrides">
+      <page>/ManageAvailableApiOverridesPage.jspx</page>
+    </view>
+    <task-flow-return id="availableApiOverridesReturn">
+      <outcome id="__3">
+        <name>availableApiOverridesReturn</name>
+      </outcome>
+    </task-flow-return>
+  </task-flow-definition>
+</adfc-config>

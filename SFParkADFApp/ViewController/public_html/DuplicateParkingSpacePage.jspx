@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view beforePhase="#{DuplicateParkingSpacePageBean.BeforePhaseEvent}">
+    <af:document id="duplicateParkingSpace_d" inlineStyle="padding:20.0px;">
+      <af:messages id="m1"/>
+      <af:form id="duplicateParkingSpace_f">
+        <af:outputText value="Duplicate Parking Space"
+                       id="duplicateParkingSpaceHeading_ot"
+                       inlineStyle="color:Blue; font-size:medium; font-weight:bold;"/>
+        <af:spacer width="10" height="10" id="headingMessageSpacer_s"/>
+        <af:outputText value="#{pageFlowScope.duplicationMessage}" id="duplicationMessage_ot"
+                       inlineStyle="font-size:small;"/>
+        <af:separator id="headingSeparator_s" inlineStyle="color:Blue;"/>
+        <af:panelGroupLayout id="duplicateParkingSpace_pgl" layout="horizontal"
+                             inlineStyle="padding:10.0px;" valign="top">
+          <af:panelGroupLayout id="currentParkingSpace_pgl" valign="top">
+            <af:outputText value="Current" id="currentParkingSpace_ot"
+                           inlineStyle="font-size:medium; font-weight:bold;"/>
+            <af:separator id="currentHeaderSpacer_s"
+                          inlineStyle="background-color:Black; height:3.0px;"/>
+            <af:panelFormLayout id="currentParkingSpace_pfl">
+              <af:inputText value="#{bindings.ParkingSpaceId.inputValue}"
+                            label="Parking Space ID:"
+                            required="#{bindings.ParkingSpaceId.hints.mandatory}"
+                            columns="#{bindings.ParkingSpaceId.hints.displayWidth}"
+                            maximumLength="#{bindings.ParkingSpaceId.hints.precision}"
+                            shortDesc="#{bindings.ParkingSpaceId.hints.tooltip}"
+                            id="currentParkingSpaceId_it" readOnly="true"
+                            binding="#{DuplicateParkingSpacePageBean.currentParkingSpaceId}">
+                <f:validator binding="#{bindings.ParkingSpaceId.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.ParkingSpaceId.format}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.PostId.inputValue}"
+                            label="Post ID:"
+                            required="#{bindings.PostId.hints.mandatory}"
+                            columns="#{bindings.PostId.hints.displayWidth}"
+                            maximumLength="#{bindings.PostId.hints.precision}"
+                            shortDesc="#{bindings.PostId.hints.tooltip}"
+                            id="currentPostId_it"
+                            binding="#{DuplicateParkingSpacePageBean.currentPostId}"
+                            readOnly="true">
+                <f:validator binding="#{bindings.PostId.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.MeterType.inputValue}"
+                            label="Meter Type:"
+                            required="#{bindings.MeterType.hints.mandatory}"
+                            columns="#{bindings.MeterType.hints.displayWidth}"
+                            maximumLength="#{bindings.MeterType.hints.precision}"
+                            shortDesc="#{bindings.MeterType.hints.tooltip}"
+                            id="meterType_it"
+                            binding="#{DuplicateParkingSpacePageBean.currentMeterType}"
+                            readOnly="true" visible="false">
+                <f:validator binding="#{bindings.MeterType.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.MsPayStationId.inputValue}"
+                            label="Multi Space Pay Station ID:"
+                            required="#{bindings.MsPayStationId.hints.mandatory}"
+                            columns="#{bindings.MsPayStationId.hints.displayWidth}"
+                            maximumLength="#{bindings.MsPayStationId.hints.precision}"
+                            shortDesc="#{bindings.MsPayStationId.hints.tooltip}"
+                            id="multiSpacePayStationId_it"
+                            binding="#{DuplicateParkingSpacePageBean.currentMultiSpacePayStationId}"
+                            readOnly="true">
+                <f:validator binding="#{bindings.MsPayStationId.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.MsSpaceNum.inputValue}"
+                            label="Multi Space Number:"
+                            required="#{bindings.MsSpaceNum.hints.mandatory}"
+                            columns="#{bindings.MsSpaceNum.hints.displayWidth}"
+                            maximumLength="#{bindings.MsSpaceNum.hints.precision}"
+                            shortDesc="#{bindings.MsSpaceNum.hints.tooltip}"
+                            id="multSpaceNumber_it"
+                            binding="#{DuplicateParkingSpacePageBean.currentMultiSpaceNumber}"
+                            readOnly="true">
+                <f:validator binding="#{bindings.MsSpaceNum.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.MsSpaceNum.format}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.LastUpdUser.inputValue}"
+                            label="Last Updated By:"
+                            required="#{bindings.LastUpdUser.hints.mandatory}"
+                            columns="#{bindings.LastUpdUser.hints.displayWidth}"
+                            maximumLength="#{bindings.LastUpdUser.hints.precision}"
+                            shortDesc="#{bindings.LastUpdUser.hints.tooltip}"
+                            id="lastUpdateUser_it"
+                            binding="#{DuplicateParkingSpacePageBean.currentLastUpdateUser}"
+                            readOnly="true" visible="false">
+                <f:validator binding="#{bindings.LastUpdUser.validator}"/>
+              </af:inputText>
+            </af:panelFormLayout>
+          </af:panelGroupLayout>
+          <af:spacer width="10" height="10" id="firstSpacerBtwnPanels_s"/>
+          <af:spacer width="1" height="130" id="lineSpacerBtwnPanesl_s"
+                     inlineStyle="background-color:Black;"/>
+          <af:spacer width="10" height="10" id="secondSpacerBtwnPanels_s"/>
+          <af:panelGroupLayout id="newParkingsSpace_pgl" valign="top">
+            <af:outputText value="New" id="duplicateParkingSpace_ot"
+                           inlineStyle="font-size:medium; font-weight:bold;"/>
+            <af:separator id="newHeaderSpacer_s"
+                          inlineStyle="background-color:Black; height:3px;"/>
+            <af:panelFormLayout id="pfl2">
+              <af:inputText value="#{bindings.ParkingSpaceId.inputValue}"
+                            label="Parking Space ID:"
+                            required="#{bindings.ParkingSpaceId.hints.mandatory}"
+                            columns="8"
+                            maximumLength="#{bindings.ParkingSpaceId.hints.precision}"
+                            shortDesc="#{bindings.ParkingSpaceId.hints.tooltip}"
+                            id="duplicateParkingSpaceId_it" readOnly="true"
+                            visible="false">
+                <f:validator binding="#{bindings.ParkingSpaceId.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.ParkingSpaceId.format}"/>
+              </af:inputText>
+              <af:inputText value="#{DuplicateParkingSpacePageBean.postIdStringValue}"
+                            label="Post ID:"
+                            columns="9"
+                            maximumLength="#{bindings.PostId.hints.precision}"
+                            shortDesc="#{bindings.PostId.hints.tooltip}"
+                            id="duplicatePostId_it" required="true"
+                            binding="#{DuplicateParkingSpacePageBean.parameterPostId}"
+                            validator="#{DuplicateParkingSpacePageBean.IsValidPostId}"
+                            valueChangeListener="#{DuplicateParkingSpacePageBean.PostIdValueChangeListenerHandler}"
+                            autoSubmit="true" partialTriggers="duplicate_cb">
+                <f:validator binding="#{bindings.PostId.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.MeterType.inputValue}"
+                            label="Meter Type:"
+                            required="#{bindings.MeterType.hints.mandatory}"
+                            columns="#{bindings.MeterType.hints.displayWidth}"
+                            maximumLength="#{bindings.MeterType.hints.precision}"
+                            shortDesc="#{bindings.MeterType.hints.tooltip}"
+                            id="duplicateMeterType_it" visible="false">
+                <f:validator binding="#{bindings.MeterType.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{bindings.MsPayStationId.inputValue}"
+                            label="Multi Space Pay Station ID:"
+                            required="#{bindings.MsPayStationId.hints.mandatory}"
+                            columns="#{bindings.MsPayStationId.hints.displayWidth}"
+                            maximumLength="#{bindings.MsPayStationId.hints.precision}"
+                            shortDesc="#{bindings.MsPayStationId.hints.tooltip}"
+                            id="duplicateMultiSpacePayStationId_it"
+                            readOnly="true"
+                            binding="#{DuplicateParkingSpacePageBean.parameterMultiSpacePayStationId}">
+                <f:validator binding="#{bindings.MsPayStationId.validator}"/>
+              </af:inputText>
+              <af:inputText value="#{DuplicateParkingSpacePageBean.spaceNumberValue}"
+                            label="Multi Space Number:"
+                            columns="2"
+                            maximumLength="#{bindings.MsSpaceNum.hints.precision}"
+                            shortDesc="#{bindings.MsSpaceNum.hints.tooltip}"
+                            id="duplicateMultiSpaceNumber_it" required="true"
+                            binding="#{DuplicateParkingSpacePageBean.parameterMultiSpaceNumber}"
+                            validator="#{DuplicateParkingSpacePageBean.IsValidSpaceNumber}"
+                            autoSubmit="true" partialTriggers="duplicate_cb">
+                <f:validator binding="#{bindings.MsSpaceNum.validator}"/>
+                <af:convertNumber groupingUsed="false"
+                                  pattern="#{bindings.MsSpaceNum.format}"/>
+              </af:inputText>
+              <af:inputText value="#{DuplicateParkingSpacePageBean.duplicatedByValue}"
+                            label="Duplicated By:"
+                            required="#{bindings.LastUpdUser.hints.mandatory}"
+                            columns="20"
+                            maximumLength="#{bindings.LastUpdUser.hints.precision}"
+                            shortDesc="#{bindings.LastUpdUser.hints.tooltip}"
+                            id="duplicateLastUpdUser_it" readOnly="true"
+                            visible="false">
+                <f:validator binding="#{bindings.LastUpdUser.validator}"/>
+              </af:inputText>
+            </af:panelFormLayout>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+        <af:separator id="buttonSeparator_s"/>
+        <af:commandButton text="Duplicate" id="duplicate_cb"
+                          actionListener="#{DuplicateParkingSpacePageBean.DuplicationButtonActionListener}"
+                          binding="#{DuplicateParkingSpacePageBean.duplicateButton}"/>
+        <af:spacer width="10" height="10" id="spacerBtwnButtons_s"/>
+      </af:form>
+      <f:facet name="metaContainer"/>
+    </af:document>
+  </f:view>
+</jsp:root>
