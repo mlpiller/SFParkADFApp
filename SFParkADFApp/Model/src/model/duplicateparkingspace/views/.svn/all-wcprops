@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/duplicateparkingspace/views
+END
+ParkingSpaceQueryByParkingSpaceIdROView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/duplicateparkingspace/views/ParkingSpaceQueryByParkingSpaceIdROView.xml
+END
+ParkingSpaceInventoryROView.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/duplicateparkingspace/views/ParkingSpaceInventoryROView.xml
+END

@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/parkingspace
+END
+ParkingSpaceInventory_OldRateAreaLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/parkingspace/ParkingSpaceInventory_OldRateAreaLovVO.xml
+END
+ParkingSpaceInventory_PcoBeatLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/parkingspace/ParkingSpaceInventory_PcoBeatLovVO.xml
+END
+ParkingSpaceInventory_MsPayStationIdLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 169
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/parkingspace/ParkingSpaceInventory_MsPayStationIdLovVO.xml
+END
+ParkingSpaceInventory_StreetBlockLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 166
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/parkingspace/ParkingSpaceInventory_StreetBlockLovVO.xml
+END
+ParkingSpaceInventory_MsSpaceNumLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 165
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/parkingspace/ParkingSpaceInventory_MsSpaceNumLovVO.xml
+END

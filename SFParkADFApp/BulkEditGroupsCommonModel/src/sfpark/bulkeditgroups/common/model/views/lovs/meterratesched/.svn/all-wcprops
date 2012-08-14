@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/meterratesched
+END
+MeterRateSched_DaysAppliedLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 161
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/meterratesched/MeterRateSched_DaysAppliedLovVO.xml
+END
+MeterRateSched_SchedPriorityLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/meterratesched/MeterRateSched_SchedPriorityLovVO.xml
+END
+MeterRateSched_ToTimeLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/meterratesched/MeterRateSched_ToTimeLovVO.xml
+END
+MeterRateSched_FromTimeLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/meterratesched/MeterRateSched_FromTimeLovVO.xml
+END

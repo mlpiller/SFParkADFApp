@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model
+END
+ModelBundle.properties
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/ModelBundle.properties
+END
+WebLogicVersionForManifest.txt
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/SFParkADFApp/!svn/ver/5/trunk/Model/src/model/WebLogicVersionForManifest.txt
+END
+Model.jpx
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/Model.jpx
+END

@@ -9,10 +9,13 @@
    SeparateXMLFiles="true"
    PackageName="model" >
    <DesignTime>
+      <Attr Name="_appModuleNames2" Value="model.bulkeditgroups.services.GroupsAM" />
       <Attr Name="_jprName" Value="../../Model.jpr" />
+      <Attr Name="_domainNames0" Value="model.bulkeditgroups.entities.SdoGeometry" />
       <Attr Name="_appModuleNames1" Value="model.availableapioverrides.services.AvailApiOverridesAM" />
       <Attr Name="_appModuleNames0" Value="model.duplicateparkingspace.services.DuplicateParkingSpaceAM" />
-      <Attr Name="_NamedConnection" Value="SFParkADF" />
+      <Attr Name="_domainNames1" Value="model.bulkeditgroups.entities.SdoPointType" />
+      <Attr Name="_NamedConnection" Value="SFParkADF"/>
    </DesignTime>
    <Containee
       Name="entities"
@@ -20,7 +23,7 @@
       PackageName="model.availableapioverrides.entities" >
       <DesignTime>
          <Attr Name="_EO" Value="true" />
-         <Attr Name="_AS" Value="true"/>
+         <Attr Name="_AS" Value="true" />
       </DesignTime>
    </Containee>
    <Containee
@@ -35,6 +38,48 @@
       Name="views"
       ObjectType="JboPackage"
       PackageName="model.availableapioverrides.views" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="entities"
+      ObjectType="JboPackage"
+      PackageName="model.bulkeditgroups.entities" >
+      <DesignTime>
+         <Attr Name="_EO" Value="true" />
+         <Attr Name="_AS" Value="true" />
+         <Attr Name="_DO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="services"
+      ObjectType="JboPackage"
+      PackageName="model.bulkeditgroups.services" >
+      <DesignTime>
+         <Attr Name="_AM" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="links"
+      ObjectType="JboPackage"
+      PackageName="model.bulkeditgroups.views.links" >
+      <DesignTime>
+         <Attr Name="_VL" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="lovs"
+      PackageName="model.bulkeditgroups.views.lovs"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VO" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="views"
+      ObjectType="JboPackage"
+      PackageName="model.bulkeditgroups.views" >
       <DesignTime>
          <Attr Name="_VO" Value="true" />
       </DesignTime>
@@ -63,4 +108,18 @@
          <Attr Name="_VO" Value="true" />
       </DesignTime>
    </Containee>
+   <AppContainee
+      Name="BulkEditGroupsCommonModel"
+      FullName="sfpark.bulkeditgroups.common.model.BulkEditGroupsCommonModel"
+      ObjectType="JboProject" >
+      <DesignTime>
+         <Attr Name="_SourceName" Value="adfLibBulkEditGroupsCommonModel.jar" />
+      </DesignTime>
+   </AppContainee>
+   <AppModuleUsage
+      Name="GroupsCommonAM"
+      FullName="sfpark.bulkeditgroups.common.model.services.GroupsCommonAM"
+      ConfigurationName="sfpark.bulkeditgroups.common.model.services.GroupsCommonAMShared"
+      SharedScope="2" >
+   </AppModuleUsage>
 </JboProject>

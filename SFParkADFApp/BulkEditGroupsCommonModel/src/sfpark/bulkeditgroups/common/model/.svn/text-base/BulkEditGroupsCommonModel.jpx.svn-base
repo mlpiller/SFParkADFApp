@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='windows-1252' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+
+<JboProject
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="BulkEditGroupsCommonModel"
+   Version="11.1.1.60.13"
+   SeparateXMLFiles="true"
+   PackageName="sfpark.bulkeditgroups.common.model" >
+   <DesignTime>
+      <Attr Name="_jprName" Value="../../../../../BulkEditGroupsCommonModel.jpr" />
+      <Attr Name="_appModuleNames0" Value="sfpark.bulkeditgroups.common.model.services.GroupsCommonAM" />
+      <Attr Name="_NamedConnection" Value="SFParkADF" />
+   </DesignTime>
+   <Containee
+      Name="services"
+      ObjectType="JboPackage"
+      PackageName="sfpark.bulkeditgroups.common.model.services" >
+      <DesignTime>
+         <Attr Name="_AM" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="allowedvalues"
+      ObjectType="JboPackage"
+      PackageName="sfpark.bulkeditgroups.common.model.views.lovs.allowedvalues" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="lovs"
+      ObjectType="JboPackage"
+      PackageName="sfpark.bulkeditgroups.common.model.views.lovs" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="metermodels"
+      ObjectType="JboPackage"
+      PackageName="sfpark.bulkeditgroups.common.model.views.lovs.metermodels" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="meteropsched"
+      ObjectType="JboPackage"
+      PackageName="sfpark.bulkeditgroups.common.model.views.lovs.meteropsched" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="meterratesched"
+      ObjectType="JboPackage"
+      PackageName="sfpark.bulkeditgroups.common.model.views.lovs.meterratesched" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="parkingspace"
+      ObjectType="JboPackage"
+      PackageName="sfpark.bulkeditgroups.common.model.views.lovs.parkingspace" >
+      <DesignTime>
+         <Attr Name="_VO" Value="true" />
+      </DesignTime>
+   </Containee>
+</JboProject>

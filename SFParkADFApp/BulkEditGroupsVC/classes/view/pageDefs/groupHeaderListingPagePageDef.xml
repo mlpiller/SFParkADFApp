@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.60.13" id="groupHeaderListingPagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="GroupHeaderUpdtVO1" RangeSize="25"
+              DataControl="GroupsAMDataControl"
+              id="GroupHeaderUpdtVO1Iterator"/>
+    <searchRegion Binds="GroupHeaderUpdtVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="GroupHeaderUpdtVO1Query"/>
+    <iterator Binds="ParkingSpaceGroupsUpdtVO1" RangeSize="25"
+              DataControl="GroupsAMDataControl"
+              id="ParkingSpaceGroupsUpdtVO1Iterator"/>
+    <searchRegion Binds="ParkingSpaceGroupsUpdtVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="ParkingSpaceGroupsUpdtVO1Query"/>
+    <iterator Binds="BlockGroupsUpdtVO1" RangeSize="25"
+              DataControl="GroupsAMDataControl"
+              id="BlockGroupsUpdtVO1Iterator"/>
+    <searchRegion Binds="BlockGroupsUpdtVO1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="BlockGroupsUpdtVO1Query"/>
+    <iterator Binds="GroupHeaderUpdtVO1" RangeSize="-1"
+              DataControl="GroupsAMDataControl"
+              id="GroupHeaderUpdtVO1Iterator1"/>
+    <iterator Binds="GroupHeaderLastUpdUserLovVO1" RangeSize="-1"
+              DataControl="GroupsAMDataControl"
+              id="GroupHeaderLastUpdUserLovVO1Iterator"/>
+    <iterator Binds="GroupHeaderGroupTypeLovVO1" RangeSize="10"
+              DataControl="GroupsAMDataControl"
+              id="GroupHeaderGroupTypeLovVO1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="GroupHeaderUpdtVO1Iterator" id="GroupHeaderUpdtVO1">
+      <nodeDefinition DefName="model.bulkeditgroups.views.GroupHeaderUpdtVO"
+                      Name="GroupHeaderUpdtVO10">
+        <AttrNames>
+          <Item Value="GroupId"/>
+          <Item Value="GroupType"/>
+          <Item Value="GroupName"/>
+          <Item Value="GroupDesc"/>
+          <Item Value="EffFromDt"/>
+          <Item Value="EffToDt"/>
+          <Item Value="CreatedDt"/>
+          <Item Value="LastUpdDt"/>
+          <Item Value="LastUpdPgm"/>
+          <Item Value="LastUpdUser"/>
+          <Item Value="SelectedGroupHeaderRow" Binds="SelectedGroupHeaderRow"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ParkingSpaceGroupsUpdtVO1Iterator"
+          id="ParkingSpaceGroupsUpdtVO1">
+      <nodeDefinition DefName="model.bulkeditgroups.views.ParkingSpaceGroupsUpdtVO"
+                      Name="ParkingSpaceGroupsUpdtVO10">
+        <AttrNames>
+          <Item Value="PsGroupId"/>
+          <Item Value="ParkingSpaceId"/>
+          <Item Value="CreatedDt"/>
+          <Item Value="LastUpdDt"/>
+          <Item Value="LastUpdPgm"/>
+          <Item Value="LastUpdUser"/>
+          <Item Value="SelectedParkingSpaceGroupRow"
+                Binds="SelectedParkingSpaceGroupRow"/>
+          <Item Value="PostId"/>
+          <Item Value="CapColor"/>
+          <Item Value="MsPayStationId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="BlockGroupsUpdtVO1Iterator" id="BlockGroupsUpdtVO1">
+      <nodeDefinition DefName="model.bulkeditgroups.views.BlockGroupsUpdtVO"
+                      Name="BlockGroupsUpdtVO10">
+        <AttrNames>
+          <Item Value="GroupId"/>
+          <Item Value="BlockId"/>
+          <Item Value="CreatedDt"/>
+          <Item Value="LastUpdDt"/>
+          <Item Value="LastUpdPgm"/>
+          <Item Value="LastUpdUser"/>
+          <Item Value="SelectedBlockGroupRow" Binds="SelectedBlockGroupRow"/>
+          <Item Value="BLOCK_DESC"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="GroupHeaderUpdtVO1Iterator"
+            id="SelectedGroupHeaderRow" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="SelectedGroupHeaderRow"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <button IterBinding="ParkingSpaceGroupsUpdtVO1Iterator"
+            id="SelectedParkingSpaceGroupRow" DTSupportsMRU="false"
+            StaticList="true">
+      <AttrNames>
+        <Item Value="SelectedParkingSpaceGroupRow"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <button IterBinding="BlockGroupsUpdtVO1Iterator" id="SelectedBlockGroupRow"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="SelectedBlockGroupRow"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+    <attributeValues IterBinding="GroupHeaderUpdtVO1Iterator" id="GroupName">
+      <AttrNames>
+        <Item Value="GroupName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="GroupHeaderLastUpdUserLovVO1Iterator"
+          id="GroupHeaderLastUpdUserLovVO1">
+      <nodeDefinition DefName="model.bulkeditgroups.views.lovs.GroupHeaderLastUpdUserLovVO"
+                      Name="GroupHeaderLastUpdUserLovVO10">
+        <AttrNames>
+          <Item Value="LastUpdUser"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="GroupHeaderGroupTypeLovVO1Iterator"
+          id="GroupHeaderGroupTypeLovVO1">
+      <nodeDefinition DefName="model.bulkeditgroups.views.lovs.GroupHeaderGroupTypeLovVO"
+                      Name="GroupHeaderGroupTypeLovVO10">
+        <AttrNames>
+          <Item Value="GroupType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="setCreateDateRangeStart" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="setCreateDateRangeStart"
+                  IsViewObjectMethod="true" DataControl="GroupsAMDataControl"
+                  InstanceName="GroupsAMDataControl.GroupHeaderUpdtVO1">
+      <NamedData NDName="value" NDType="oracle.jbo.domain.Date"/>
+    </methodAction>
+    <methodAction IterBinding="GroupHeaderUpdtVO1Iterator"
+                  id="setCreateDateRangeEnd" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="setCreateDateRangeEnd"
+                  IsViewObjectMethod="true" DataControl="GroupsAMDataControl"
+                  InstanceName="GroupsAMDataControl.GroupHeaderUpdtVO1">
+      <NamedData NDName="value" NDType="oracle.jbo.domain.Date"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

@@ -40,6 +40,12 @@ FROM AVAIL_API_PM_DISTRICTS_VW AvailApiPmDistrictsVw]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PM_DISTRICT_ID"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="PmDistrictName"
@@ -55,6 +61,12 @@ FROM AVAIL_API_PM_DISTRICTS_VW AvailApiPmDistrictsVw]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PM_DISTRICT_NAME"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="RowID"
@@ -65,7 +77,14 @@ FROM AVAIL_API_PM_DISTRICTS_VW AvailApiPmDistrictsVw]]>
     ColumnType="ROWID"
     AliasName="ROWID"
     Expression="ROWID"
-    SQLType="ROWID"/>
+    SQLType="ROWID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ROW_ID"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SelectedPmDistrict"
     IsSelected="false"
@@ -74,8 +93,19 @@ FROM AVAIL_API_PM_DISTRICTS_VW AvailApiPmDistrictsVw]]>
     Type="java.lang.Boolean"
     ColumnType="NUMBER"
     AliasName="VIEW_ATTR"
-    SQLType="BIT"/>
+    SQLType="BIT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SELECT_PM_DISTRICT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="RowID"/>
   </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

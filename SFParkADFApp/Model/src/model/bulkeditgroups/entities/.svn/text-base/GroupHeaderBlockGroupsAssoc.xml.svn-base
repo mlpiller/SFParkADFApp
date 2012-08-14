@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="GroupHeaderBlockGroupsAssoc"
+  Version="11.1.1.60.13">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="GroupHeaderEO"
+    Cardinality="1"
+    Source="true"
+    Owner="model.bulkeditgroups.entities.GroupHeaderEO"
+    LockLevel="NONE">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="GroupHeaderEO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.bulkeditgroups.entities.GroupHeaderEO.GroupId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="BlockGroupsEO"
+    Cardinality="-1"
+    Owner="model.bulkeditgroups.entities.BlockGroupsEO">
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="BlockGroupsEO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.bulkeditgroups.entities.BlockGroupsEO.GroupId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

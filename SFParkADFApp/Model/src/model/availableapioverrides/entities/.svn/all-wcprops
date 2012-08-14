@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities
+END
+AvailApiPmDistrictsVwEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities/AvailApiPmDistrictsVwEO.xml
+END
+OspInventoryEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities/OspInventoryEO.xml
+END
+AvailApiBlocksVwEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities/AvailApiBlocksVwEO.xml
+END
+AaoPmDistrictsAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities/AaoPmDistrictsAssoc.xml
+END
+AvailApiBlockfacesVwEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities/AvailApiBlockfacesVwEO.xml
+END
+BlocksEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities/BlocksEO.xml
+END
+AaoBlocksAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities/AaoBlocksAssoc.xml
+END
+PmDistrictsEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities/PmDistrictsEO.xml
+END
+BlockfacesEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities/BlockfacesEO.xml
+END
+AaoBockfacesAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities/AaoBockfacesAssoc.xml
+END
+AvailApiOspInventoryVwEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities/AvailApiOspInventoryVwEO.xml
+END
+AaoOspInventoryAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities/AaoOspInventoryAssoc.xml
+END
+AvailApiOverridesEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/availableapioverrides/entities/AvailApiOverridesEO.xml
+END

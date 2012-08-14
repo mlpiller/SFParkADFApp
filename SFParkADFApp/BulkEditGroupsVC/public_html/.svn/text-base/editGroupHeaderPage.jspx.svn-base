@@ -1,0 +1,147 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="bulkeditgroupsvcBundle"
+         value="#{adfBundle['view.BulkEditGroupsVCBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelHeader text="#{pageFlowScope.action} Group Header" id="ph1">
+          <f:facet name="context"/>
+          <f:facet name="menuBar"/>
+          <f:facet name="toolbar"/>
+          <f:facet name="legend"/>
+          <f:facet name="info"/>
+          <af:panelFormLayout id="editGroupHeader_pfl" maxColumns="2" rows="6">
+            <af:inputText value="#{bindings.GroupId.inputValue}"
+                          label="#{bulkeditgroupsvcBundle.GROUP_ID}"
+                          required="#{bindings.GroupId.hints.mandatory}"
+                          columns="#{bindings.GroupId.hints.displayWidth}"
+                          maximumLength="#{bindings.GroupId.hints.precision}"
+                          shortDesc="#{bindings.GroupId.hints.tooltip}" id="it1"
+                          readOnly="true">
+              <f:validator binding="#{bindings.GroupId.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.GroupName.inputValue}"
+                          label="#{bulkeditgroupsvcBundle.GROUP_NAME}"
+                          required="#{bindings.GroupName.hints.mandatory}"
+                          columns="#{bindings.GroupName.hints.displayWidth}"
+                          maximumLength="#{bindings.GroupName.hints.precision}"
+                          shortDesc="#{bindings.GroupName.hints.tooltip}"
+                          id="it5">
+              <f:validator binding="#{bindings.GroupName.validator}"/>
+            </af:inputText>
+            <af:selectOneChoice value="#{bindings.GroupType1.inputValue}"
+                                label="#{bulkeditgroupsvcBundle.GROUP_TYPE}"
+                                required="#{bindings.GroupType1.hints.mandatory}"
+                                shortDesc="#{bindings.GroupType1.hints.tooltip}"
+                                id="soc1"
+                                readOnly="#{EditGroupHeaderBean.groupTypeReadOnly}">
+              <f:selectItems value="#{bindings.GroupType1.items}" id="si1"/>
+            </af:selectOneChoice>
+            <af:inputText value="#{bindings.GroupDesc.inputValue}"
+                          label="#{bulkeditgroupsvcBundle.GROUP_DESCRIPTION}"
+                          required="#{bindings.GroupDesc.hints.mandatory}"
+                          columns="#{bindings.GroupDesc.hints.displayWidth}"
+                          maximumLength="#{bindings.GroupDesc.hints.precision}"
+                          shortDesc="#{bindings.GroupDesc.hints.tooltip}"
+                          id="it2">
+              <f:validator binding="#{bindings.GroupDesc.validator}"/>
+            </af:inputText>
+            <af:inputDate value="#{bindings.EffFromDt.inputValue}"
+                          label="#{bulkeditgroupsvcBundle.EFFECTIVE_FROM_DATE}"
+                          required="#{bindings.EffFromDt.hints.mandatory}"
+                          shortDesc="#{bindings.EffFromDt.hints.tooltip}"
+                          id="id2">
+              <f:validator binding="#{bindings.EffFromDt.validator}"/>
+              <af:convertDateTime pattern="#{bindings.EffFromDt.format}"/>
+            </af:inputDate>
+            <af:inputDate value="#{bindings.EffToDt.inputValue}"
+                          label="#{bulkeditgroupsvcBundle.EFFECTIVE_TO_DATE}"
+                          required="#{bindings.EffToDt.hints.mandatory}"
+                          shortDesc="#{bindings.EffToDt.hints.tooltip}"
+                          id="id3">
+              <f:validator binding="#{bindings.EffToDt.validator}"/>
+              <af:convertDateTime pattern="#{bindings.EffToDt.format}"/>
+            </af:inputDate>
+            <af:inputDate value="#{bindings.CreatedDt.inputValue}"
+                          label="#{bulkeditgroupsvcBundle.CREATED_DATE}"
+                          required="#{bindings.CreatedDt.hints.mandatory}"
+                          shortDesc="#{bindings.CreatedDt.hints.tooltip}"
+                          id="id4" readOnly="true"
+                          binding="#{EditGroupHeaderBean.createdDate}">
+              <f:validator binding="#{bindings.CreatedDt.validator}"/>
+              <af:convertDateTime pattern="#{bindings.CreatedDt.format}"/>
+            </af:inputDate>
+            <af:inputDate value="#{bindings.LastUpdDt.inputValue}"
+                          label="#{bulkeditgroupsvcBundle.LAST_UPDATE_DATE}"
+                          required="#{bindings.LastUpdDt.hints.mandatory}"
+                          shortDesc="#{bindings.LastUpdDt.hints.tooltip}"
+                          id="id1" readOnly="true"
+                          binding="#{EditGroupHeaderBean.lastUpdateDate}">
+              <f:validator binding="#{bindings.LastUpdDt.validator}"/>
+              <af:convertDateTime pattern="#{bindings.LastUpdDt.format}"/>
+            </af:inputDate>
+            <af:inputText value="#{bindings.LastUpdUser.inputValue}"
+                          label="#{bulkeditgroupsvcBundle.LAST_UPDATE_USER}"
+                          required="#{bindings.LastUpdUser.hints.mandatory}"
+                          columns="#{bindings.LastUpdUser.hints.displayWidth}"
+                          maximumLength="#{bindings.LastUpdUser.hints.precision}"
+                          shortDesc="#{bindings.LastUpdUser.hints.tooltip}"
+                          id="it3" readOnly="true"
+                          binding="#{EditGroupHeaderBean.lastUpdateUser}">
+              <f:validator binding="#{bindings.LastUpdUser.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.LastUpdPgm.inputValue}"
+                          label="#{bulkeditgroupsvcBundle.LAST_UPDATE_PROGRAM}"
+                          required="#{bindings.LastUpdPgm.hints.mandatory}"
+                          columns="#{bindings.LastUpdPgm.hints.displayWidth}"
+                          maximumLength="#{bindings.LastUpdPgm.hints.precision}"
+                          shortDesc="#{bindings.LastUpdPgm.hints.tooltip}"
+                          id="it6" readOnly="true"
+                          binding="#{EditGroupHeaderBean.lastUpdateProgram}">
+              <f:validator binding="#{bindings.LastUpdPgm.validator}"/>
+            </af:inputText>
+            <f:facet name="footer">
+              <af:panelGroupLayout layout="vertical" id="pgl1">
+                <af:panelGroupLayout layout="horizontal" id="pgl2"
+                                     visible="false">
+                  <af:commandButton actionListener="#{bindings.First.execute}"
+                                    text="First"
+                                    disabled="#{!bindings.First.enabled}"
+                                    partialSubmit="true" id="cb4"/>
+                  <af:commandButton actionListener="#{bindings.Previous.execute}"
+                                    text="Previous"
+                                    disabled="#{!bindings.Previous.enabled}"
+                                    partialSubmit="true" id="cb1"/>
+                  <af:commandButton actionListener="#{bindings.Next.execute}"
+                                    text="Next"
+                                    disabled="#{!bindings.Next.enabled}"
+                                    partialSubmit="true" id="cb3"/>
+                  <af:commandButton actionListener="#{bindings.Last.execute}"
+                                    text="Last"
+                                    disabled="#{!bindings.Last.enabled}"
+                                    partialSubmit="true" id="cb5"/>
+                </af:panelGroupLayout>
+                <af:group id="g1">
+                  <af:commandButton text="Save Changes" id="saveGroupHeader_cb"
+                                    action="submit"
+                                    actionListener="#{EditGroupHeaderBean.saveGroupHeaderButtonHandler}"/>
+                  <af:commandButton text="Cancel" id="cancelEditGroupHeader_cb"
+                                    action="cancel"
+                                    actionListener="#{EditGroupHeaderBean.cancelGroupHeaderButtonHandler}"
+                                    immediate="true"/>
+                </af:group>
+              </af:panelGroupLayout>
+            </f:facet>
+          </af:panelFormLayout>
+        </af:panelHeader>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

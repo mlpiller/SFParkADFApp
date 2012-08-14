@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/metermodels
+END
+MeterModels_MeterVendorLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 155
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/metermodels/MeterModels_MeterVendorLovVO.xml
+END
+MeterModels_MeterModelLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 154
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/metermodels/MeterModels_MeterModelLovVO.xml
+END
+MeterModels_SmartMeterFlagLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/metermodels/MeterModels_SmartMeterFlagLovVO.xml
+END

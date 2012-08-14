@@ -1,0 +1,543 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="linkStyle">Orthogonal</property>
+      <property
+         name="y">1103.1553</property>
+      <property
+         name="x">90.0</property>
+   </OverallProperties>
+   <View
+      id="View2">
+      <property
+         name="activityId">groupHeaderListing</property>
+      <property
+         name="page">/groupHeaderListingPage.jspx</property>
+      <property
+         name="thumbnailExpanded">false</property>
+      <property
+         name="description">
+         <![CDATA[<html><p><b>Group Header Listing</b></p><p>Activity ID:  groupHeaderListing</p><p>Activity Type:  View</p><p/><p><em>Display the header (GROUP_HEADER) and details (either BLOCK_GROUPS or<br/> PARKING_SPACE_GROUPS).
+This is the starting place to add/edit/delete groups and<br/> the group details.<br/></em></p>]]>
+      </property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">489.9525</property>
+      <property
+         name="x">684.8994</property>
+   </View>
+   <TaskFlowCall
+      id="TaskFlowCall3">
+      <property
+         name="taskFlowId">edit-group-header-btf</property>
+      <property
+         name="activityId">edit-group-header-btf</property>
+      <property
+         name="documentReference">/WEB-INF/edit-group-header-btf.xml</property>
+      <property
+         name="runAsDialog">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>edit-group-header-btf&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">939.3047</property>
+      <property
+         name="x">386.26562</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="View2"
+      to="TaskFlowCall3">
+      <property
+         name="fromOutcome">Group Header Action</property>
+      <property
+         name="sdm:polyPoints">B61,691.8994,942.4541,R54</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="TaskFlowCall3"
+      to="View2">
+      <property
+         name="fromOutcome">*</property>
+      <property
+         name="sdm:polyPoints">R46,684.8994,935.4541,B50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall8">
+      <property
+         name="activityId">Commit</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Commit&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">601.6035</property>
+      <property
+         name="x">386.26562</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase9"
+      from="View2"
+      to="MethodCall8">
+      <property
+         name="fromOutcome">Validate and Save</property>
+      <property
+         name="sdm:polyPoints">L58,386.26562,496.60193,T50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase12"
+      from="MethodCall8"
+      to="View2">
+      <property
+         name="fromOutcome">Commit</property>
+      <property
+         name="sdm:polyPoints">R50,677.8994,601.2529,B39</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall9">
+      <property
+         name="taskFlowId">select-blocks-for-block-group-btf</property>
+      <property
+         name="activityId">select-blocks-for-block-group-btf</property>
+      <property
+         name="documentReference">/WEB-INF/select-blocks-for-block-group-btf.xml</property>
+      <property
+         name="runAsDialog">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Select Blocks from the BLOCKS table&lt;/b>&lt;/p>&lt;p>Activity ID:  select-blocks-for-block-group-btf&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p>&lt;p/>&lt;p>&lt;em>This selects blocks not already assigned to the targeted group id.&lt;br/>&lt;/em>&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">428.90234</property>
+      <property
+         name="x">386.26562</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase11"
+      from="View2"
+      to="TaskFlowCall9">
+      <property
+         name="fromOutcome">Add Blocks</property>
+      <property
+         name="sdm:polyPoints">L42,535.5825,482.60193,535.5825,425.05176,R46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase13"
+      from="TaskFlowCall9"
+      to="View2">
+      <property
+         name="fromOutcome">selectBlocksReturn</property>
+      <property
+         name="sdm:polyPoints">R54,528.5825,432.05176,528.5825,489.60193,L50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall14">
+      <property
+         name="taskFlowId">select-parking-spaces-for-group-btf</property>
+      <property
+         name="activityId">select-parking-spaces-for-group-btf</property>
+      <property
+         name="documentReference">/WEB-INF/select-parking-spaces-for-group-btf.xml</property>
+      <property
+         name="runAsDialog">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Select Parking Spaces from the PARKING_SPACE_INVENTORY table&lt;/b>&lt;/p>&lt;p>Activity ID:  select-parking-spaces-for-group-btf&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p>&lt;p/>&lt;p>&lt;em>This selects from the parking space inventory values not already assigned to the&lt;br/> targeted group id.&lt;br/>&lt;/em>&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">256.20117</property>
+      <property
+         name="x">386.26562</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase15"
+      from="View2"
+      to="TaskFlowCall14">
+      <property
+         name="fromOutcome">Add Parking Spaces</property>
+      <property
+         name="sdm:polyPoints">T44,681.3994,252.35059,R46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase16"
+      from="TaskFlowCall14"
+      to="View2">
+      <property
+         name="fromOutcome">selectParkingSpacesReturn</property>
+      <property
+         name="sdm:polyPoints">R54,674.3994,259.3506,T33</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall17">
+      <property
+         name="taskFlowId">select-parking-spaces-from-meter-rate-schedules-for-group-btf</property>
+      <property
+         name="activityId">select-parking-spaces-from-meter-rate-schedules-for-group-btf</property>
+      <property
+         name="documentReference">/WEB-INF/select-parking-spaces-from-meter-rate-schedules-for-group-btf.xml</property>
+      <property
+         name="runAsDialog">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Select Parking Spaces from the METER_RATE_SCHED table&lt;/b>&lt;/p>&lt;p>Activity ID:  select-parking-spaces-from-meter-rate-schedules-for-group-btf&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p>&lt;p/>&lt;p>&lt;em>This selects only from the active meter rate schedules and only values not&lt;br/> already assigned to the targeted group id.&lt;br/>&lt;/em>&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">386.26562</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase18"
+      from="View2"
+      to="TaskFlowCall17">
+      <property
+         name="fromOutcome">Add Meter Rate Schedules</property>
+      <property
+         name="sdm:polyPoints">T67,695.3994,79.649414,R46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase19"
+      from="TaskFlowCall17"
+      to="View2">
+      <property
+         name="fromOutcome">selectMeterRateSchedulesReturn</property>
+      <property
+         name="sdm:polyPoints">R54,688.3994,86.649414,T56</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall20">
+      <property
+         name="taskFlowId">select-parking-spaces-from-meter-op-schedules-for-group-btf</property>
+      <property
+         name="activityId">select-parking-spaces-from-meter-op-schedules-for-group-btf</property>
+      <property
+         name="documentReference">/WEB-INF/select-parking-spaces-from-meter-op-schedules-for-group-btf.xml</property>
+      <property
+         name="runAsDialog">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Select Parking Spaces from the METER_OP_SCHED table&lt;/b>&lt;/p>&lt;p>Activity ID:  select-parking-spaces-from-meter-op-schedules-for-group-btf&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p>&lt;p/>&lt;p>&lt;em>This selects only from the active meter operation schedules and only values not&lt;br/> already assigned to the targeted group id.&lt;br/>&lt;/em>&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">433.66898</property>
+      <property
+         name="x">979.86816</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase22"
+      from="View2"
+      to="TaskFlowCall20">
+      <property
+         name="fromOutcome">Add Meter Op Schedules</property>
+      <property
+         name="sdm:polyPoints">R42,832.3838,482.60193,832.3838,433.3184,L50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase23"
+      from="TaskFlowCall20"
+      to="View2">
+      <property
+         name="fromOutcome">selectMeterOpSchedulesReturn</property>
+      <property
+         name="sdm:polyPoints">L58,839.3838,440.3184,839.3838,489.60193,R50</property>
+   </ControlFlowCase>
+   <note
+      id="note24">
+      <property
+         name="sdm:nodeHeight">80.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000"><b>Bounded Task Flow
+</b></font>    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000">This targets rows in the 
+      BLOCKS table that are not already assigned to the targeted Block Group 
+      (BLOCK_GROUPS table)</font>
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">429.25293</property>
+      <property
+         name="sdm:nodeWidth">100.0</property>
+      <property
+         name="x">90.0</property>
+   </note>
+   <attachment
+      islink="true"
+      id="attachment25"
+      from="note24"
+      to="TaskFlowCall9">
+      <property
+         name="sdm:polyPoints">R50,247.88281,429.25293,247.88281,428.55176,L50</property>
+   </attachment>
+   <note
+      id="note26">
+      <property
+         name="sdm:nodeHeight">80.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000"><b>Bounded Task Flow </b></font>
+    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000">This targets rows in the 
+      PARKING_SPACE_INVENTORY table that are not already assigned to the 
+      targeted Parking Space Group (PARKING_SPACE_GROUPS table)</font>
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">256.55176</property>
+      <property
+         name="sdm:nodeWidth">100.0</property>
+      <property
+         name="x">90.0</property>
+   </note>
+   <attachment
+      islink="true"
+      id="attachment27"
+      from="note26"
+      to="TaskFlowCall14">
+      <property
+         name="sdm:polyPoints">R50,247.88281,256.55176,247.88281,255.85059,L50</property>
+   </attachment>
+   <note
+      id="note28">
+      <property
+         name="sdm:nodeHeight">80.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000"><b>Bounded Task Flow </b></font>
+    </p>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000">
+</font>    </p>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000">This is the starting place 
+      for all transactions. Additions and Deletions are invoked from this page.</font>
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">614.8047</property>
+      <property
+         name="sdm:nodeWidth">100.0</property>
+      <property
+         name="x">835.2656</property>
+   </note>
+   <attachment
+      islink="true"
+      id="attachment29"
+      from="note28"
+      to="View2">
+      <property
+         name="sdm:polyPoints">T50,835.2656,496.60193,R58</property>
+   </attachment>
+   <note
+      id="note30">
+      <property
+         name="sdm:nodeHeight">80.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font color="#000000" face="Dialog" size="2">This targets rows in the 
+      METER_RATE_SCHED table that are not already assigned to the targeted 
+      Parking Space Group (PARKING_SPACE_GROUPS table)</font>
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">83.850586</property>
+      <property
+         name="sdm:nodeWidth">100.0</property>
+      <property
+         name="x">90.0</property>
+   </note>
+   <attachment
+      islink="true"
+      id="attachment31"
+      from="note30"
+      to="TaskFlowCall17">
+      <property
+         name="sdm:polyPoints">R50,247.88281,83.850586,247.88281,83.149414,L50</property>
+   </attachment>
+   <note
+      id="note32">
+      <property
+         name="sdm:nodeHeight">80.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000"><b>Bounded Task Flow </b></font>
+    </p>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000">
+</font>    </p>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000">This targets rows in the 
+      METER_OP_SCHED table that are not already assigned to the targeted 
+      Parking Space Group (PARKING_SPACE_GROUPS table)</font>
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">319.45248</property>
+      <property
+         name="sdm:nodeWidth">100.0</property>
+      <property
+         name="x">834.8994</property>
+   </note>
+   <attachment
+      islink="true"
+      id="attachment33"
+      from="note32"
+      to="TaskFlowCall20">
+      <property
+         name="sdm:polyPoints">B50,834.8994,426.3184,L42</property>
+   </attachment>
+   <note
+      id="note34">
+      <property
+         name="sdm:nodeHeight">80.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000"><b>Bounded Task Flow </b></font>
+    </p>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000">
+</font>    </p>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000">This is for Adds and Edits 
+      of Groups in the GROUP_HEADER table</font>
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">939.6553</property>
+      <property
+         name="sdm:nodeWidth">100.0</property>
+      <property
+         name="x">90.0</property>
+   </note>
+   <attachment
+      islink="true"
+      id="attachment35"
+      from="note34"
+      to="TaskFlowCall3">
+      <property
+         name="sdm:polyPoints">R50,247.88281,939.6553,247.88281,938.9541,L50</property>
+   </attachment>
+   <note
+      id="note36">
+      <property
+         name="sdm:nodeHeight">80.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+    
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000"><b>Method</b> 
+</font>    </p>
+    <p style="margin-top: 0">
+      
+    </p>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000">This commit is for the 
+      following actions: </font>
+    </p>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000">1. Deletions from 
+      GROUP_HEADER table </font>
+    </p>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000">2. Additions and Deletions 
+      from BLOCK_GROUPS </font>
+    </p>
+    <p style="margin-top: 0">
+      <font face="Dialog" size="2" color="#000000">3. Additions and Deletions 
+      from PARKING_SPACE_GROUPS</font>
+    </p>
+  </body>
+</html>]]>
+      </property>
+      <property
+         name="y">601.9541</property>
+      <property
+         name="sdm:nodeWidth">100.0</property>
+      <property
+         name="x">90.0</property>
+   </note>
+   <attachment
+      islink="true"
+      id="attachment37"
+      from="note36"
+      to="MethodCall8">
+      <property
+         name="sdm:polyPoints">R50,247.88281,601.9541,247.88281,601.2529,L50</property>
+   </attachment>
+</SDM>

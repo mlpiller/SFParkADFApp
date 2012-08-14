@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AllowedValues_OnOffStreetTypeLovVO"
+  Version="11.1.1.60.13"
+  OrderBy="COLUMN_VALUE"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="sfpark.bulkeditgroups.common.model.views.lovs.allowedvalues.AllowedValues_OnOffStreetTypeLovVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery>
+    <![CDATA[SELECT COLUMN_VALUE, DESCRIPTION
+FROM ALLOWED_VALUES
+WHERE TABLE_NAME = 'PARKING_SPACE_INVENTORY' AND COLUMN_NAME = 'ON_OFFSTREET_TYPE']]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="OnOffStreetType"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="COLUMN_VALUE"
+    Expression="COLUMN_VALUE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Description"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="DESCRIPTION"
+    Expression="DESCRIPTION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="sfpark.bulkeditgroups.common.model.BulkEditGroupsCommonModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

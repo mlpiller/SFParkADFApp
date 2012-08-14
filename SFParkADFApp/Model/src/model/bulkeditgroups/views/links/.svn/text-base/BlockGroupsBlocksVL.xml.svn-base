@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BlockGroupsBlocksVL"
+  Version="11.1.1.60.13"
+  EntityAssociation="model.bulkeditgroups.entities.BlockGroupsBlocksAssoc">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.bulkeditgroups.views.links.BlockGroupsBlocksVL_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="BlockGroupsUpdtVO"
+    Cardinality="1"
+    Owner="model.bulkeditgroups.views.BlockGroupsUpdtVO"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="BlockGroupsUpdtVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.bulkeditgroups.views.BlockGroupsUpdtVO.BlockId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="BlocksUpdtVO"
+    Cardinality="-1"
+    Owner="model.bulkeditgroups.views.BlocksUpdtVO">
+    <DesignTime>
+      <Attr Name="_finderName" Value="BlocksUpdtVO"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.bulkeditgroups.views.BlocksUpdtVO.BlockId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

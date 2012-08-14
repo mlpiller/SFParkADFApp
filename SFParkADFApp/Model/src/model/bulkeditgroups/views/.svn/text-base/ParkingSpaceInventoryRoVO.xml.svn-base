@@ -1,0 +1,1577 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ParkingSpaceInventoryRoVO"
+  Version="11.1.1.60.13"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  OrderBy="PARKING_SPACE_ID"
+  RowClass="model.bulkeditgroups.views.ParkingSpaceInventoryRoVORowImpl"
+  ComponentClass="model.bulkeditgroups.views.ParkingSpaceInventoryRoVOImpl">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.bulkeditgroups.views.ParkingSpaceInventoryRoVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="BindGroupId"
+    Kind="where"
+    Type="java.lang.String"
+    DefaultValue="0">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PARKING_SPACE_ID"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <ViewAccessor
+    Name="GroupsCommonAM_ParkingSpaceInventory_MsPayStationIdLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.parkingspace.ParkingSpaceInventory_MsPayStationIdLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="ParkingSpaceInventory_MsPayStationIdLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_ParkingSpaceInventory_MsSpaceNumLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.parkingspace.ParkingSpaceInventory_MsSpaceNumLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="ParkingSpaceInventory_MsSpaceNumLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_AllowedValues_SensorFlagLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.allowedvalues.AllowedValues_SensorFlagLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="AllowedValues_SensorFlagLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_AllowedValues_JurisdictionLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.allowedvalues.AllowedValues_JurisdictionLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="AllowedValues_JurisdictionLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_AllowedValues_OnOffStreetTypeLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.allowedvalues.AllowedValues_OnOffStreetTypeLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="AllowedValues_OnOffStreetTypeLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_PmDistrictsLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.PmDistrictsLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="PmDistrictsLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_AllowedValues_ActiveMeterFlagLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.allowedvalues.AllowedValues_ActiveMeterFlagLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="AllowedValues_ActiveMeterFlagLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_MeterModels_SmartMeterFlagLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.metermodels.MeterModels_SmartMeterFlagLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="MeterModels_SmartMeterFlagLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_AllowedValues_MeterTypeLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.allowedvalues.AllowedValues_MeterTypeLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="AllowedValues_MeterTypeLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_MeterModels_MeterVendorLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.metermodels.MeterModels_MeterVendorLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="MeterModels_MeterVendorLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_MeterModels_MeterModelLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.metermodels.MeterModels_MeterModelLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="MeterModels_MeterModelLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_AllowedValues_CapColorLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.allowedvalues.AllowedValues_CapColorLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="AllowedValues_CapColorLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_ParkingSpaceInventory_OldRateAreaLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.parkingspace.ParkingSpaceInventory_OldRateAreaLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="ParkingSpaceInventory_OldRateAreaLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_ParkingSpaceInventory_StreetBlockLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.parkingspace.ParkingSpaceInventory_StreetBlockLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="ParkingSpaceInventory_StreetBlockLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_OspInventory_OspIdFacilityNameLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.OspInventory_OspIdFacilityNameLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="OspInventory_OspIdFacilityNameLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_ParkingSpaceInventory_PcoBeatLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.parkingspace.ParkingSpaceInventory_PcoBeatLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="ParkingSpaceInventory_PcoBeatLovVO1"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_MsSpaceNum"
+    ListVOName="GroupsCommonAM_ParkingSpaceInventory_MsSpaceNumLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MsSpaceNum"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MsSpaceNum"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="MsSpaceNum"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SensorFlag"
+    ListVOName="GroupsCommonAM_AllowedValues_SensorFlagLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SensorFlag"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SensorFlag"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SensorFlag"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SensorDescription"
+    ListVOName="GroupsCommonAM_AllowedValues_SensorFlagLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SensorDescription"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Jurisdiction"
+    ListVOName="GroupsCommonAM_AllowedValues_JurisdictionLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Jurisdiction"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Jurisdiction"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Jurisdiction"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_OnOffstreetType"
+    ListVOName="GroupsCommonAM_AllowedValues_OnOffStreetTypeLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OnOffstreetType"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="OnOffStreetType"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="OnOffStreetType"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PmDistrictName"
+    ListVOName="GroupsCommonAM_PmDistrictsLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PmDistrictName"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="PmDistrictName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="PmDistrictName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ActiveMeterFlag"
+    ListVOName="GroupsCommonAM_AllowedValues_ActiveMeterFlagLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ActiveMeterFlag"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ActiveMeterFlag"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ActiveMeterFlag"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ActiveMeterDesc"
+    ListVOName="GroupsCommonAM_AllowedValues_ActiveMeterFlagLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ActiveMeterDesc"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SmartMeterFlag"
+    ListVOName="GroupsCommonAM_MeterModels_SmartMeterFlagLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SmartMeterFlag"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SmartMeterFlag"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="SmartMeterFlag"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MeterType"
+    ListVOName="GroupsCommonAM_AllowedValues_MeterTypeLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MeterType"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MeterType"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="MeterType"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MeterVendor"
+    ListVOName="GroupsCommonAM_MeterModels_MeterVendorLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MeterVendor"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MeterVendor"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="MeterVendor"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MeterModel"
+    ListVOName="GroupsCommonAM_MeterModels_MeterModelLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MeterModel"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MeterModel"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="MeterModel"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CapColor"
+    ListVOName="GroupsCommonAM_AllowedValues_CapColorLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CapColor"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CapColor"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="CapColor"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CapColorDesc"
+    ListVOName="GroupsCommonAM_AllowedValues_CapColorLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CapColorDesc"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_OldRateArea"
+    ListVOName="GroupsCommonAM_ParkingSpaceInventory_OldRateAreaLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="OldRateArea"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="OldRateArea"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="OldRateArea"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_StreetBlock"
+    ListVOName="GroupsCommonAM_ParkingSpaceInventory_StreetBlockLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StreetBlock"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="StreetBlock"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="StreetBlock"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FacilityName"
+    ListVOName="GroupsCommonAM_OspInventory_OspIdFacilityNameLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FacilityName"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FacilityName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="FacilityName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PcoBeat"
+    ListVOName="GroupsCommonAM_ParkingSpaceInventory_PcoBeatLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PcoBeat"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="PcoBeat"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="PcoBeat"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery>
+    <![CDATA[SELECT ParkingSpaceInventory.PARKING_SPACE_ID,
+       ParkingSpaceInventory.POST_ID,
+       ParkingSpaceInventory.MS_PAY_STATION_ID,
+       ParkingSpaceInventory.MS_SPACE_NUM,
+       ParkingSpaceInventory.SENSOR_FLAG,
+       AllowedValues1.DESCRIPTION SENSOR_DESCRIPTION,
+       ParkingSpaceInventory.ON_OFFSTREET_TYPE,
+       ParkingSpaceInventory.OSP_ID,
+       OspInventory.FACILITY_NAME,
+       ParkingSpaceInventory.JURISDICTION,
+       ParkingSpaceInventory.PM_DISTRICT_ID,
+       Districts.PM_DISTRICT_NAME,
+       ParkingSpaceInventory.BLOCKFACE_ID,
+       ParkingSpaceInventory.ACTIVE_METER_FLAG,
+       AllowedValues2.DESCRIPTION ACTIVE_METER_DESC,
+       ParkingSpaceInventory.REASON_CODE,
+       ParkingSpaceInventory.SMART_METER_FLAG,
+       ParkingSpaceInventory.METER_TYPE,
+       ParkingSpaceInventory.METER_VENDOR,
+       ParkingSpaceInventory.METER_MODEL,
+       ParkingSpaceInventory.CAP_COLOR,
+       AllowedValues3.DESCRIPTION CAP_COLOR_DESC,
+       ParkingSpaceInventory.PCO_BEAT,
+       ParkingSpaceInventory.OLD_RATE_AREA,
+       ParkingSpaceInventory.STREET_ID,
+       ParkingSpaceInventory.STREET_NAME,
+       ParkingSpaceInventory.STREET_NUM,
+       ParkingSpaceInventory.PARITY_DIGIT_POSITION,
+       ParkingSpaceInventory.STREET_SEG_CTRLN_ID,
+       ParkingSpaceInventory.ORIENTATION,
+       ParkingSpaceInventory.LONGITUDE,
+       ParkingSpaceInventory.LATITUDE,
+       ParkingSpaceInventory.GEOM,
+       ParkingSpaceInventory.LEGISLATION_REF,
+       ParkingSpaceInventory.LEGISLATION_DT,
+       ParkingSpaceInventory.WORK_ORDER,
+       ParkingSpaceInventory.COMMENTS,
+       ParkingSpaceInventory.CREATED_DT,
+       ParkingSpaceInventory.LAST_UPD_DT,
+       ParkingSpaceInventory.LAST_UPD_USER,
+       ParkingSpaceInventory.LAST_UPD_PGM,
+       ParkingSpaceInventory.COLLECTION_ROUTE,
+       ParkingSpaceInventory.COLLECTION_SUBROUTE,
+       ParkingSpaceInventory.PMR_ROUTE,
+       BlockFaces.BLOCK_NUM,
+       (ParkingSpaceInventory.STREET_NAME || ' ' || BlockFaces.BLOCK_NUM*100) STREET_BLOCK
+FROM PARKING_SPACE_INVENTORY ParkingSpaceInventory 
+LEFT OUTER JOIN PM_DISTRICTS Districts ON ParkingSpaceInventory.PM_DISTRICT_ID = Districts.PM_DISTRICT_ID
+LEFT OUTER JOIN ALLOWED_VALUES AllowedValues1 ON (ParkingSpaceInventory.SENSOR_FLAG = AllowedValues1.COLUMN_VALUE AND AllowedValues1.COLUMN_NAME = 'SENSOR_FLAG')
+LEFT OUTER JOIN ALLOWED_VALUES AllowedValues2 ON (ParkingSpaceInventory.ACTIVE_METER_FLAG = AllowedValues2.COLUMN_VALUE AND AllowedValues2.COLUMN_NAME = 'ACTIVE_METER_FLAG')
+LEFT OUTER JOIN BLOCKFACES BlockFaces ON ParkingSpaceInventory.BLOCKFACE_ID = BlockFaces.BLOCKFACE_ID
+LEFT OUTER JOIN ALLOWED_VALUES AllowedValues3 ON (ParkingSpaceInventory.CAP_COLOR = AllowedValues3.COLUMN_VALUE AND AllowedValues3.COLUMN_NAME = 'CAP_COLOR')
+LEFT OUTER JOIN OSP_INVENTORY OspInventory ON ParkingSpaceInventory.OSP_ID = OspInventory.OSP_ID
+WHERE ParkingSpaceInventory.PARKING_SPACE_ID NOT IN
+(SELECT
+PARKING_SPACE_ID FROM PARKING_SPACE_GROUPS
+WHERE PS_GROUP_ID = :BindGroupId)]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="ParkingSpaceId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="PARKING_SPACE_ID"
+    Expression="PARKING_SPACE_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PostId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Precision="9"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="POST_ID"
+    Expression="POST_ID"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="9"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="POST_ID"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MsPayStationId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="9"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MS_PAY_STATION_ID"
+    Expression="MS_PAY_STATION_ID"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="9"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="MULTI_SPACE_PAY_STATION_ID"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MsSpaceNum"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="MS_SPACE_NUM"
+    Expression="MS_SPACE_NUM"
+    SQLType="NUMERIC"
+    LOVName="LOV_MsSpaceNum">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="MULTISPACE_SPACE_NUMBER"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SensorFlag"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="SENSOR_FLAG"
+    Expression="SENSOR_FLAG"
+    SQLType="VARCHAR"
+    LOVName="LOV_SensorFlag">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SENSOR_FLAG"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SensorDescription"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="SENSOR_DESCRIPTION"
+    Expression="SENSOR_DESCRIPTION"
+    SQLType="VARCHAR"
+    LOVName="LOV_SensorDescription">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SENSOR_DESCRIPTION"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OnOffstreetType"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="3"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ON_OFFSTREET_TYPE"
+    Expression="ON_OFFSTREET_TYPE"
+    SQLType="VARCHAR"
+    LOVName="LOV_OnOffstreetType">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ONOFF_STREET_TYPE"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OspId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="OSP_ID"
+    Expression="OSP_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="OFF_STREET_PARKING_ID"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FacilityName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FACILITY_NAME"
+    Expression="FACILITY_NAME"
+    SQLType="VARCHAR"
+    LOVName="LOV_FacilityName">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LOT_NAME"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Jurisdiction"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="5"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="JURISDICTION"
+    Expression="JURISDICTION"
+    SQLType="VARCHAR"
+    LOVName="LOV_Jurisdiction">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PmDistrictId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="PM_DISTRICT_ID"
+    Expression="PM_DISTRICT_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PM_DISTRICT_ID"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PmDistrictName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="20"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PM_DISTRICT_NAME"
+    Expression="PM_DISTRICT_NAME"
+    SQLType="VARCHAR"
+    LOVName="LOV_PmDistrictName">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PARKING_MANAGEMENT_DISTRICT"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BlockfaceId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="BLOCKFACE_ID"
+    Expression="BLOCKFACE_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="BLOCKFACE_ID"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ActiveMeterFlag"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="ACTIVE_METER_FLAG"
+    Expression="ACTIVE_METER_FLAG"
+    SQLType="VARCHAR"
+    LOVName="LOV_ActiveMeterFlag">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ACTIVE_METER_FLAG"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ActiveMeterDesc"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ACTIVE_METER_DESC"
+    Expression="ACTIVE_METER_DESC"
+    SQLType="VARCHAR"
+    LOVName="LOV_ActiveMeterDesc">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ACTIVE_METER_DESCRIPTION"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ReasonCode"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="2"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="REASON_CODE"
+    Expression="REASON_CODE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="REASON_CODE"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SmartMeterFlag"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="SMART_METER_FLAG"
+    Expression="SMART_METER_FLAG"
+    SQLType="VARCHAR"
+    LOVName="LOV_SmartMeterFlag">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SMART_METER_FLAG"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MeterType"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="2"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="METER_TYPE"
+    Expression="METER_TYPE"
+    SQLType="VARCHAR"
+    LOVName="LOV_MeterType">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="METER_TYPE"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MeterVendor"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="METER_VENDOR"
+    Expression="METER_VENDOR"
+    SQLType="VARCHAR"
+    LOVName="LOV_MeterVendor">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="METER_VENDOR"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MeterModel"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="METER_MODEL"
+    Expression="METER_MODEL"
+    SQLType="VARCHAR"
+    LOVName="LOV_MeterModel">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="METER_MODEL"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CapColor"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CAP_COLOR"
+    Expression="CAP_COLOR"
+    SQLType="VARCHAR"
+    LOVName="LOV_CapColor">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CAP_COLOR"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CapColorDesc"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CAP_COLOR_DESC"
+    Expression="CAP_COLOR_DESC"
+    SQLType="VARCHAR"
+    LOVName="LOV_CapColorDesc">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CAP_COLOR_DESCRIPTION"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PcoBeat"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="7"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PCO_BEAT"
+    Expression="PCO_BEAT"
+    SQLType="VARCHAR"
+    LOVName="LOV_PcoBeat">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PCO_BEAT"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="OldRateArea"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="OLD_RATE_AREA"
+    Expression="OLD_RATE_AREA"
+    SQLType="VARCHAR"
+    LOVName="LOV_OldRateArea">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="OLD_RATE_AREA"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StreetId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="STREET_ID"
+    Expression="STREET_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STREET_ID"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StreetName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="STREET_NAME"
+    Expression="STREET_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STREET_NAME"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StreetNum"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="STREET_NUM"
+    Expression="STREET_NUM"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STREET_NUMBER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ParityDigitPosition"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="PARITY_DIGIT_POSITION"
+    Expression="PARITY_DIGIT_POSITION"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PARITY_DIGIT_POSITION"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StreetSegCtrlnId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="STREET_SEG_CTRLN_ID"
+    Expression="STREET_SEG_CTRLN_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Orientation"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="ORIENTATION"
+    Expression="ORIENTATION"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Longitude"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="LONGITUDE"
+    Expression="LONGITUDE"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Latitude"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="LATITUDE"
+    Expression="LATITUDE"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Geom"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="model.bulkeditgroups.entities.common.SdoGeometry"
+    ColumnType="SDO_GEOMETRY"
+    Domain="model.bulkeditgroups.entities.SdoGeometry"
+    AliasName="GEOM"
+    Expression="GEOM"
+    SQLType="STRUCT">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LegislationRef"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="LEGISLATION_REF"
+    Expression="LEGISLATION_REF"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LEGISLATION_REFERENCE"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LegislationDt"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="LEGISLATION_DT"
+    Expression="LEGISLATION_DT"
+    SQLType="DATE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LEGISLATION_DATE"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="WorkOrder"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="7"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="WORK_ORDER"
+    Expression="WORK_ORDER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="WORK_ORDER"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Comments"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="50"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="COMMENTS"
+    Expression="COMMENTS"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDt"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="CREATED_DT"
+    Expression="CREATED_DT"
+    SQLType="DATE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CREATED_DATE"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastUpdDt"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="LAST_UPD_DT"
+    Expression="LAST_UPD_DT"
+    SQLType="DATE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LAST_UPDATE_DATE"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastUpdUser"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="LAST_UPD_USER"
+    Expression="LAST_UPD_USER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LAST_UPDATE_USER"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastUpdPgm"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="LAST_UPD_PGM"
+    Expression="LAST_UPD_PGM"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LAST_UPDATE_PROGRAM"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CollectionRoute"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="COLLECTION_ROUTE"
+    Expression="COLLECTION_ROUTE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="COLLECTION_ROUTE"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CollectionSubroute"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="COLLECTION_SUBROUTE"
+    Expression="COLLECTION_SUBROUTE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="COLLECTION_SUBROUTE"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PmrRoute"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PMR_ROUTE"
+    Expression="PMR_ROUTE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PMR_ROUTE"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BlockNum"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="BLOCK_NUM"
+    Expression="BLOCK_NUM"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StreetBlock"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="71"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="STREET_BLOCK"
+    Expression="STREET_BLOCK"
+    SQLType="VARCHAR"
+    LOVName="LOV_StreetBlock">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="71"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STREET_BLOCK"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SelectedParkingSpaceRow"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Boolean"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="BIT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SELECTED_PARKING_SPACE_ROW"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ParkingSpaceId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

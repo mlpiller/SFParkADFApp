@@ -38,6 +38,12 @@ FROM AVAIL_API_BLOCKS_VW AvailApiBlocksVw]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="22"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="BLOCK_ID"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="Description"
@@ -53,6 +59,12 @@ FROM AVAIL_API_BLOCKS_VW AvailApiBlocksVw]]>
     <DesignTime>
       <Attr Name="_DisplaySize" Value="71"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="DESCRIPTION"/>
+      </SchemaBasedProperties>
+    </Properties>
   </ViewAttribute>
   <ViewAttribute
     Name="RowID"
@@ -63,7 +75,14 @@ FROM AVAIL_API_BLOCKS_VW AvailApiBlocksVw]]>
     ColumnType="ROWID"
     AliasName="ROWID"
     Expression="ROWID"
-    SQLType="ROWID"/>
+    SQLType="ROWID">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="ROW_ID"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SelectedBlock"
     IsSelected="false"
@@ -72,8 +91,19 @@ FROM AVAIL_API_BLOCKS_VW AvailApiBlocksVw]]>
     Type="java.lang.Boolean"
     ColumnType="NUMBER"
     AliasName="VIEW_ATTR"
-    SQLType="BIT"/>
+    SQLType="BIT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SELECTED_BLOCK"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="RowID"/>
   </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

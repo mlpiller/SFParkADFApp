@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="BlocksRoVO"
+  Version="11.1.1.60.13"
+  OrderBy="BLOCK_ID"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  RowClass="model.bulkeditgroups.views.BlocksRoVORowImpl"
+  ComponentClass="model.bulkeditgroups.views.BlocksRoVOImpl"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Variable
+    Name="BindGroupId"
+    Kind="where"
+    Type="java.lang.String"
+    DefaultValue="0">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="BLOCK_GROUP_ID"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Variable>
+  <ViewAccessor
+    Name="GroupsCommonAM_AllowedValues_AreaTypeLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.allowedvalues.AllowedValues_AreaTypeLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="AllowedValues_AreaTypeLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_PmDistrictsLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.PmDistrictsLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="PmDistrictsLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_Blocks_StreetBlockLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.Blocks_StreetBlockLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="Blocks_StreetBlockLovVO1"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="GroupsCommonAM_Neighborhoods_NeighborhoodLovVO"
+    ViewObjectName="sfpark.bulkeditgroups.common.model.views.lovs.Neighborhoods_NeighborhoodLovVO"
+    AMUsageName="GroupsCommonAM"
+    ViewInstanceName="Neighborhoods_NeighborhoodLovVO1"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_AreaType"
+    ListVOName="GroupsCommonAM_AllowedValues_AreaTypeLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="AreaType"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AreaType"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AreaType"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PmDistrictName"
+    ListVOName="GroupsCommonAM_PmDistrictsLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PmDistrictName"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="PmDistrictName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="PmDistrictName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_BlockDesc"
+    ListVOName="GroupsCommonAM_Blocks_StreetBlockLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="BlockDesc"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="StreetBlock"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="StreetBlock"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_NeighborhoodName"
+    ListVOName="GroupsCommonAM_Neighborhoods_NeighborhoodLovVO"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="NeighborhoodName"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="NeighborhoodName"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="NeighborhoodName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery>
+    <![CDATA[SELECT Blocks.BLOCK_ID,
+       Blocks.AREA_TYPE,
+       Blocks.PM_DISTRICT_ID,
+       Districts.PM_DISTRICT_NAME,
+       Blocks.BLOCK_NUM,
+       Blocks.STREET_ID,
+       Blocks.STREET_NAME,
+       Blocks.STREET_NAME || ' ' || Blocks.BLOCK_NUM*100 BLOCK_DESC,
+       Blocks.FM_ADDR_NO,
+       Blocks.TO_ADDR_NO,
+       Blocks.GEOM,
+       Blocks.CREATED_DT,
+       Blocks.LAST_UPD_DT,
+       Blocks.LAST_UPD_USER,
+       Blocks.LAST_UPD_PGM,
+       Blocks.SDE_ID,
+       Blocks.NEIGHBORHOOD_ID,
+       NEIGHBORHOODS.NEIGHBORHOOD_NAME
+FROM BLOCKS Blocks LEFT OUTER JOIN PM_DISTRICTS Districts
+ON Blocks.PM_DISTRICT_ID = Districts.PM_DISTRICT_ID
+LEFT OUTER JOIN NEIGHBORHOODS Neighborhoods
+ON Blocks.NEIGHBORHOOD_ID = Neighborhoods.NEIGHBORHOOD_ID
+WHERE Blocks.BLOCK_ID NOT IN
+(SELECT BLOCK_ID FROM BLOCK_GROUPS
+WHERE GROUP_ID = :BindGroupId)]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="BlockId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="BLOCK_ID"
+    Expression="BLOCK_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="BLOCK_ID"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="AreaType"
+    IsUpdateable="false"
+    LOVName="LOV_AreaType"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="AREA_TYPE"
+    Expression="AREA_TYPE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="AREA_TYPE"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PmDistrictId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="PM_DISTRICT_ID"
+    Expression="PM_DISTRICT_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PM_DISTRICT_ID"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PmDistrictName"
+    IsUpdateable="false"
+    LOVName="LOV_PmDistrictName"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="20"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="PM_DISTRICT_NAME"
+    Expression="PM_DISTRICT_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="PM_DISTRICT_NAME"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BlockNum"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="BLOCK_NUM"
+    Expression="BLOCK_NUM"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="BLOCK_NUMBER"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StreetId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="STREET_ID"
+    Expression="STREET_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STREET_ID"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="StreetName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="STREET_NAME"
+    Expression="STREET_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STREET_NAME"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BlockDesc"
+    IsUpdateable="false"
+    LOVName="LOV_BlockDesc"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="71"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="BLOCK_DESC"
+    Expression="BLOCK_DESC"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="71"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="STREET_BLOCK"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FmAddrNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="FM_ADDR_NO"
+    Expression="FM_ADDR_NO"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="FROM_ADDRESS_NUMBER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ToAddrNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="TO_ADDR_NO"
+    Expression="TO_ADDR_NO"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="TO_ADDRESS_NUMBER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Geom"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="model.bulkeditgroups.entities.common.SdoGeometry"
+    ColumnType="SDO_GEOMETRY"
+    Domain="model.bulkeditgroups.entities.SdoGeometry"
+    AliasName="GEOM"
+    Expression="GEOM"
+    SQLType="STRUCT">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CreatedDt"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="CREATED_DT"
+    Expression="CREATED_DT"
+    SQLType="DATE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CREATED_DATE"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastUpdDt"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="LAST_UPD_DT"
+    Expression="LAST_UPD_DT"
+    SQLType="DATE">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LAST_UPDATE_DATE"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastUpdUser"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="LAST_UPD_USER"
+    Expression="LAST_UPD_USER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LAST_UPDATE_USER"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LastUpdPgm"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="LAST_UPD_PGM"
+    Expression="LAST_UPD_PGM"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SdeId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    Precision="10"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="SDE_ID"
+    Expression="SDE_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NeighborhoodId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="NEIGHBORHOOD_ID"
+    Expression="NEIGHBORHOOD_ID"
+    SQLType="NUMERIC">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="NEIGHBORHOOD_ID"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="NeighborhoodName"
+    IsUpdateable="false"
+    LOVName="LOV_NeighborhoodName"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NEIGHBORHOOD_NAME"
+    Expression="NEIGHBORHOOD_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="NEIGHBORHOOD_NAME"/>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="SelectedBlockRow"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Boolean"
+    ColumnType="NUMBER"
+    AliasName="VIEW_ATTR"
+    SQLType="BIT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SELECTED_BLOCK_ROW"/>
+        <DISPLAYHINT
+          Value="Hide"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="SdeId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

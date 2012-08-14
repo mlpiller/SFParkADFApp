@@ -1,0 +1,83 @@
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues
+END
+AllowedValues_PrePaymentTimeLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 162
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues/AllowedValues_PrePaymentTimeLovVO.xml
+END
+AllowedValues_ColorRuleAppliedLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 164
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues/AllowedValues_ColorRuleAppliedLovVO.xml
+END
+AllowedValues_RateTypeLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues/AllowedValues_RateTypeLovVO.xml
+END
+AllowedValues_MeterTypeLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues/AllowedValues_MeterTypeLovVO.xml
+END
+AllowedValues_AreaTypeLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues/AllowedValues_AreaTypeLovVO.xml
+END
+AllowedValues_SensorFlagLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues/AllowedValues_SensorFlagLovVO.xml
+END
+AllowedValues_ActiveMeterFlagLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues/AllowedValues_ActiveMeterFlagLovVO.xml
+END
+AllowedValues_TimeLimitLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 157
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues/AllowedValues_TimeLimitLovVO.xml
+END
+AllowedValues_OnOffStreetTypeLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 163
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues/AllowedValues_OnOffStreetTypeLovVO.xml
+END
+AllowedValues_RateStatusLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 158
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues/AllowedValues_RateStatusLovVO.xml
+END
+AllowedValues_JurisdictionLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues/AllowedValues_JurisdictionLovVO.xml
+END
+AllowedValues_ScheduleTypeLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 160
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues/AllowedValues_ScheduleTypeLovVO.xml
+END
+AllowedValues_CapColorLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/allowedvalues/AllowedValues_CapColorLovVO.xml
+END

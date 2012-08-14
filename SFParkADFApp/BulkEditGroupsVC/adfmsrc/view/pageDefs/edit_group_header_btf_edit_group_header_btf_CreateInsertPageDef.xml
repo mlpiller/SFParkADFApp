@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.60.13"
+                id="edit_group_header_btf_edit_group_header_btf_CreateInsertPageDef"
+                Package="view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="GroupHeaderUpdtVO1" RangeSize="25"
+              DataControl="GroupsAMDataControl"
+              id="GroupHeaderUpdtVO1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="GroupHeaderUpdtVO1Iterator" id="CreateInsert"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

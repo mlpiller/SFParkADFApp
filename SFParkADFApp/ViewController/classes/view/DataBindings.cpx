@@ -9,8 +9,6 @@
           usageId="view_DuplicateParkingSpacePagePageDef"/>
     <page path="/WEB-INF/duplicateParkingSpace-btf.xml#duplicateParkingSpace-btf@CallDuplicateParkingSpace"
           usageId="view_duplicateParkingSpace_btf_duplicateParkingSpace_btf_CallDuplicateParkingSpacePageDef"/>
-    <page path="/ManageAvailableApiOverridesPage.jspx"
-          usageId="view_ManageAvailableApiOverridesPagePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_duplicateParkingSpace_btf_duplicateParkingSpace_btf_ExecuteWithParamsPageDef"
@@ -19,8 +17,6 @@
           path="view.pageDefs.DuplicateParkingSpacePagePageDef"/>
     <page id="view_duplicateParkingSpace_btf_duplicateParkingSpace_btf_CallDuplicateParkingSpacePageDef"
           path="view.pageDefs.duplicateParkingSpace_btf_duplicateParkingSpace_btf_CallDuplicateParkingSpacePageDef"/>
-    <page id="view_ManageAvailableApiOverridesPagePageDef"
-          path="view.pageDefs.ManageAvailableApiOverridesPagePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="DuplicateParkingSpaceAMDataControl"
@@ -30,15 +26,6 @@
                      SupportsRangesize="true" SupportsResetState="true"
                      SupportsSortCollection="true"
                      Configuration="DuplicateParkingSpaceAMLocal"
-                     syncMode="Immediate"
-                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
-    <BC4JDataControl id="AvailApiOverridesAMDataControl"
-                     Package="model.availableapioverrides.services"
-                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
-                     SupportsTransactions="true" SupportsFindMode="true"
-                     SupportsRangesize="true" SupportsResetState="true"
-                     SupportsSortCollection="true"
-                     Configuration="AvailApiOverridesAMLocal"
                      syncMode="Immediate"
                      xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
   </dataControlUsages>

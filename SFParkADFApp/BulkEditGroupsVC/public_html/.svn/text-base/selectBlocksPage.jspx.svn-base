@@ -1,0 +1,191 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="bulkeditgroupsvcBundle"
+         value="#{adfBundle['view.BulkEditGroupsVCBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelGroupLayout layout="vertical" id="pgl1">
+          <af:panelHeader text="Blocks > Select Blocks for Block Group: #{pageFlowScope.groupName}"
+                          id="searchBlocks_ph">
+            <af:query id="qryId1" headerText="Search" disclosed="true"
+                      value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                      model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                      queryListener="#{SelectBlocksBean.onQueryListenerHandler}"
+                      queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                      resultComponentId="::resId1" rows="4" maxColumns="2"
+                      binding="#{SelectBlocksBean.blocksQuery}"/>
+          </af:panelHeader>
+          <af:group id="blockButtons_group">
+            <af:commandButton text="Save Selections" id="saveSelectedBlocks_cb"
+                              action="Save Block Selections"
+                              actionListener="#{SelectBlocksBean.saveSelectedBlocksButtonHandler}"/>
+            <af:commandButton text="Select All Blocks" id="selectAllBlocks_cb"
+                              actionListener="#{SelectBlocksBean.selectAllBlocksButtonHandler}"/>
+            <af:commandButton text="Cancel Selections"
+                              id="cancelBlockSelections_cb"
+                              action="Cancel Block Selections"
+                              actionListener="#{SelectBlocksBean.cancelBlockSelectionsButtonHandler}"/>
+          </af:group>
+          <af:group id="queryBlocksRowCount_g">
+            <af:spacer width="10" height="10" id="s1"/>
+            <af:outputText value="Query Results Row Count #{bindings.BlocksRoVO1.estimatedRowCount}"
+                           id="blockRow_count_ot"
+                           partialTriggers="resId1 qryId1"/>
+          </af:group>
+          <af:panelGroupLayout id="blocks_pgl" layout="scroll">
+            <af:table value="#{bindings.BlocksRoVO1.collectionModel}" var="row"
+                      rows="#{bindings.BlocksRoVO1.rangeSize}"
+                      emptyText="#{bindings.BlocksRoVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.BlocksRoVO1.rangeSize}"
+                      rowBandingInterval="0"
+                      filterModel="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                      queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                      filterVisible="true" varStatus="vs"
+                      selectionListener="#{bindings.BlocksRoVO1.collectionModel.makeCurrent}"
+                      rowSelection="multiple" id="resId1"
+                      styleClass="AFStretchWidth"
+                      binding="#{SelectBlocksBean.blocksTable}"
+                      partialTriggers="::saveSelectedBlocks_cb ::cancelBlockSelections_cb ::selectAllBlocks_cb">
+              <af:column headerText="#{bulkeditgroupsvcBundle.SELECT_TO_ADD}" id="c1" align="center"
+                         width="90">
+                <af:selectBooleanCheckbox value="#{row.bindings.SelectedBlockRow.inputValue}"
+                                          label="#{row.bindings.SelectedBlockRow.label}"
+                                          shortDesc="#{bindings.BlocksRoVO1.hints.SelectedBlockRow.tooltip}"
+                                          id="sbc1"/>
+              </af:column>
+              <af:column sortProperty="BlockId" filterable="true"
+                         sortable="true"
+                         headerText="#{bulkeditgroupsvcBundle.BLOCK_ID}"
+                         id="resId1c1" width="70"
+                         filterFeatures="caseInsensitive"
+                         shortDesc="Use the filter above the column heading to assist in your search">
+                <af:outputText value="#{row.BlockId}" id="ot6">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.BlocksRoVO1.hints.BlockId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.BlocksRoVO1.hints.BlockDesc.label}"
+                         id="c2" sortable="true" filterable="true"
+                         sortProperty="Block" filterFeatures="caseInsensitive"
+                         shortDesc="Use the filter above the column heading to assist in your search"
+                         width="120">
+                <af:outputText value="#{row.BlockDesc}" id="ot11"/>
+              </af:column>
+              <af:column sortProperty="AreaType" filterable="true"
+                         sortable="true"
+                         headerText="#{bulkeditgroupsvcBundle.AREA_TYPE}"
+                         id="resId1c2" width="90"
+                         filterFeatures="caseInsensitive"
+                         shortDesc="Use the filter above the column heading to assist in your search">
+                <af:outputText value="#{row.AreaType}" id="ot4"/>
+              </af:column>
+              <af:column headerText="#{bulkeditgroupsvcBundle.PARKING_MANAGEMENT_DISTRICT}"
+                         id="c3" sortProperty="PmDistrictName" sortable="true"
+                         filterable="true" filterFeatures="caseInsensitive"
+                         shortDesc="Use the filter above the column heading to assist in your search">
+                <af:outputText value="#{row.PmDistrictName}" id="ot12"/>
+              </af:column>
+              <af:column sortProperty="PmDistrictId" filterable="true"
+                         sortable="true"
+                         headerText="#{bulkeditgroupsvcBundle.PM_DISTRICT_ID}"
+                         id="resId1c3" width="80" rendered="false"
+                         filterFeatures="caseInsensitive"
+                         shortDesc="Use the filter above the column heading to assist in your search">
+                <af:outputText value="#{row.PmDistrictId}" id="ot7">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.BlocksRoVO1.hints.PmDistrictId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column headerText="#{bindings.BlocksRoVO1.hints.NeighborhoodName.label}"
+                         id="c4" sortProperty="NeighborhoodName"
+                         sortable="false" filterable="true"
+                         filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.NeighborhoodName}" id="ot13"/>
+              </af:column>
+              <af:column sortProperty="BlockNum" filterable="true"
+                         sortable="true"
+                         headerText="#{bulkeditgroupsvcBundle.BLOCK_NUMBER}"
+                         id="resId1c4" width="80" rendered="false"
+                         filterFeatures="caseInsensitive"
+                         shortDesc="Use the filter above the column heading to assist in your search">
+                <af:outputText value="#{row.BlockNum}" id="ot9">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.BlocksRoVO1.hints.BlockNum.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="StreetId" filterable="true"
+                         sortable="true"
+                         headerText="#{bulkeditgroupsvcBundle.STREET_ID}"
+                         id="resId1c5" width="80" rendered="false"
+                         filterFeatures="caseInsensitive"
+                         shortDesc="Use the filter above the column heading to assist in your search">
+                <af:outputText value="#{row.StreetId}" id="ot8">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.BlocksRoVO1.hints.StreetId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="StreetName" filterable="true"
+                         sortable="true"
+                         headerText="#{bulkeditgroupsvcBundle.STREET_NAME}"
+                         id="resId1c6" rendered="false"
+                         filterFeatures="caseInsensitive"
+                         shortDesc="Use the filter above the column heading to assist in your search">
+                <af:outputText value="#{row.StreetName}" id="ot1"/>
+              </af:column>
+              <af:column sortProperty="FmAddrNo" filterable="true"
+                         sortable="true"
+                         headerText="#{bulkeditgroupsvcBundle.FROM_ADDRESS_NUMBER}"
+                         id="resId1c7" width="70"
+                         filterFeatures="caseInsensitive"
+                         shortDesc="Use the filter above the column heading to assist in your search">
+                <af:outputText value="#{row.FmAddrNo}" id="ot2">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.BlocksRoVO1.hints.FmAddrNo.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="ToAddrNo" filterable="true"
+                         sortable="true"
+                         headerText="#{bulkeditgroupsvcBundle.TO_ADDRESS_NUMBER}"
+                         id="resId1c8" width="70"
+                         filterFeatures="caseInsensitive"
+                         shortDesc="Use the filter above the column heading to assist in your search">
+                <af:outputText value="#{row.ToAddrNo}" id="ot3">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.BlocksRoVO1.hints.ToAddrNo.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="SdeId" filterable="true" sortable="true"
+                         headerText="#{bindings.BlocksRoVO1.hints.SdeId.label}"
+                         id="resId1c9" rendered="false"
+                         filterFeatures="caseInsensitive"
+                         shortDesc="Use the filter above the column heading to assist in your search">
+                <af:outputText value="#{row.SdeId}" id="ot5">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.BlocksRoVO1.hints.SdeId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="NeighborhoodId" filterable="true"
+                         sortable="true"
+                         headerText="#{bulkeditgroupsvcBundle.NEIGHBORHOOD_ID}"
+                         id="resId1c10" rendered="false"
+                         filterFeatures="caseInsensitive"
+                         shortDesc="Use the filter above the column heading to assist in your search">
+                <af:outputText value="#{row.NeighborhoodId}" id="ot10">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.BlocksRoVO1.hints.NeighborhoodId.format}"/>
+                </af:outputText>
+              </af:column>
+            </af:table>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

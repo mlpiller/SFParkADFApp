@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.60.13" id="selectParkingSpacesPagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ParkingSpaceInventoryRoVO1" RangeSize="25"
+              DataControl="GroupsAMDataControl"
+              id="ParkingSpaceInventoryRoVO1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="ParkingSpaceInventoryRoVO1Iterator"
+                  id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ParkingSpaceInventoryRoVO1Iterator"
+          id="ParkingSpaceInventoryRoVO1">
+      <nodeDefinition DefName="model.bulkeditgroups.views.ParkingSpaceInventoryRoVO"
+                      Name="ParkingSpaceInventoryRoVO10">
+        <AttrNames>
+          <Item Value="ParkingSpaceId"/>
+          <Item Value="PostId"/>
+          <Item Value="MsPayStationId"/>
+          <Item Value="MsSpaceNum"/>
+          <Item Value="SensorFlag"/>
+          <Item Value="OnOffstreetType"/>
+          <Item Value="OspId"/>
+          <Item Value="Jurisdiction"/>
+          <Item Value="PmDistrictId"/>
+          <Item Value="BlockfaceId"/>
+          <Item Value="ActiveMeterFlag"/>
+          <Item Value="ReasonCode"/>
+          <Item Value="SmartMeterFlag"/>
+          <Item Value="MeterType"/>
+          <Item Value="MeterVendor"/>
+          <Item Value="MeterModel"/>
+          <Item Value="CapColor"/>
+          <Item Value="PcoBeat"/>
+          <Item Value="OldRateArea"/>
+          <Item Value="StreetId"/>
+          <Item Value="StreetName"/>
+          <Item Value="StreetNum"/>
+          <Item Value="ParityDigitPosition"/>
+          <Item Value="StreetSegCtrlnId"/>
+          <Item Value="Orientation"/>
+          <Item Value="Longitude"/>
+          <Item Value="Latitude"/>
+          <Item Value="LegislationRef"/>
+          <Item Value="LegislationDt"/>
+          <Item Value="WorkOrder"/>
+          <Item Value="CollectionRoute"/>
+          <Item Value="CollectionSubroute"/>
+          <Item Value="PmrRoute"/>
+          <Item Value="SelectedParkingSpaceRow"
+                Binds="SelectedParkingSpaceRow"/>
+          <Item Value="PmDistrictName"/>
+          <Item Value="SensorDescription"/>
+          <Item Value="CapColorDesc"/>
+          <Item Value="FacilityName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="ParkingSpaceInventoryRoVO1Iterator"
+            id="SelectedParkingSpaceRow" DTSupportsMRU="false"
+            StaticList="true">
+      <AttrNames>
+        <Item Value="SelectedParkingSpaceRow"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+  </bindings>
+</pageDefinition>

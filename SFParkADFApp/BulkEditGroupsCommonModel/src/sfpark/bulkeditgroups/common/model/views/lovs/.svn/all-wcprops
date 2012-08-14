@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs
+END
+Blocks_StreetBlockLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 138
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/Blocks_StreetBlockLovVO.xml
+END
+Neighborhoods_NeighborhoodLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/Neighborhoods_NeighborhoodLovVO.xml
+END
+PmDistrictsLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/PmDistrictsLovVO.xml
+END
+OspInventory_OspIdFacilityNameLovVO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsCommonModel/src/sfpark/bulkeditgroups/common/model/views/lovs/OspInventory_OspIdFacilityNameLovVO.xml
+END

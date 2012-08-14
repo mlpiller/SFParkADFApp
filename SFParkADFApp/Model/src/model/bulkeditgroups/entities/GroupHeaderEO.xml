@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="GroupHeaderEO"
+  Version="11.1.1.60.13"
+  DBObjectType="synonym"
+  DBObjectName="GROUP_HEADER"
+  AliasName="GroupHeaderEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="GroupId"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    ColumnName="GROUP_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="GROUP_HEADER"
+    PrimaryKey="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GroupName"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="GROUP_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="GROUP_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GroupType"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="GROUP_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="GROUP_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GroupDesc"
+    Precision="40"
+    ColumnName="GROUP_DESC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="GROUP_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="40"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EffFromDt"
+    IsNotNull="true"
+    ColumnName="EFF_FROM_DT"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="GROUP_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EffToDt"
+    ColumnName="EFF_TO_DT"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    TableName="GROUP_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Geom"
+    IsQueriable="false"
+    ColumnName="GEOM"
+    SQLType="STRUCT"
+    Domain="model.bulkeditgroups.entities.SdoGeometry"
+    Type="model.bulkeditgroups.entities.common.SdoGeometry"
+    ColumnType="MDSYS.SDO_GEOMETRY"
+    TableName="GROUP_HEADER"/>
+  <Attribute
+    Name="Spaces"
+    IsQueriable="false"
+    ColumnName="SPACES"
+    SQLType="CLOB"
+    Type="oracle.jbo.domain.ClobDomain"
+    ColumnType="CLOB"
+    TableName="GROUP_HEADER"/>
+  <Attribute
+    Name="CreatedDt"
+    IsUpdateable="while_insert"
+    ColumnName="CREATED_DT"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="GROUP_HEADER"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
+  </Attribute>
+  <Attribute
+    Name="LastUpdDt"
+    ColumnName="LAST_UPD_DT"
+    SQLType="TIMESTAMP"
+    Type="oracle.jbo.domain.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="GROUP_HEADER"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+    <TransientExpression><![CDATA[adf.currentDateTime]]></TransientExpression>
+  </Attribute>
+  <Attribute
+    Name="LastUpdUser"
+    Precision="30"
+    ColumnName="LAST_UPD_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="GROUP_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdPgm"
+    Precision="30"
+    ColumnName="LAST_UPD_PGM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="GROUP_HEADER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="BlockGroupsEO"
+    Association="model.bulkeditgroups.entities.GroupHeaderBlockGroupsAssoc"
+    AssociationEnd="model.bulkeditgroups.entities.GroupHeaderBlockGroupsAssoc.BlockGroupsEO"
+    AssociationOtherEnd="model.bulkeditgroups.entities.GroupHeaderBlockGroupsAssoc.GroupHeaderEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="ParkingSpaceGroupsEO"
+    Association="model.bulkeditgroups.entities.GroupHeaderParkingSpaceGroupsAssoc"
+    AssociationEnd="model.bulkeditgroups.entities.GroupHeaderParkingSpaceGroupsAssoc.ParkingSpaceGroupsEO"
+    AssociationOtherEnd="model.bulkeditgroups.entities.GroupHeaderParkingSpaceGroupsAssoc.GroupHeaderEO"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="GroupHeaderPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="GROUP_HEADER_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.bulkeditgroups.entities.GroupHeaderEO.GroupId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0012589">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0012589"/>
+      <Attr Name="_checkCondition" Value='"GROUP_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.bulkeditgroups.entities.GroupHeaderEO.GroupName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0012590">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0012590"/>
+      <Attr Name="_checkCondition" Value='"GROUP_TYPE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.bulkeditgroups.entities.GroupHeaderEO.GroupType"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0012591">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0012591"/>
+      <Attr Name="_checkCondition" Value='"EFF_FROM_DT" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.bulkeditgroups.entities.GroupHeaderEO.EffFromDt"/>
+    </AttrArray>
+  </Key>
+</Entity>

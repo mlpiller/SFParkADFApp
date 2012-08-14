@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/SFParkADFApp/!svn/ver/2/trunk/AvailableApiOverridesVC/public_html/WEB-INF
+END
+faces-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/SFParkADFApp/!svn/ver/2/trunk/AvailableApiOverridesVC/public_html/WEB-INF/faces-config.xml
+END
+weblogic.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/SFParkADFApp/!svn/ver/2/trunk/AvailableApiOverridesVC/public_html/WEB-INF/weblogic.xml
+END
+availableApiOverrides-btf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/SFParkADFApp/!svn/ver/2/trunk/AvailableApiOverridesVC/public_html/WEB-INF/availableApiOverrides-btf.xml
+END
+trinidad-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/SFParkADFApp/!svn/ver/2/trunk/AvailableApiOverridesVC/public_html/WEB-INF/trinidad-config.xml
+END
+adfc-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/svn/SFParkADFApp/!svn/ver/2/trunk/AvailableApiOverridesVC/public_html/WEB-INF/adfc-config.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/SFParkADFApp/!svn/ver/2/trunk/AvailableApiOverridesVC/public_html/WEB-INF/web.xml
+END

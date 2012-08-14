@@ -33,25 +33,53 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDt"
     EntityUsage="AvailApiOverridesEO"
-    AliasName="CREATED_DT"/>
+    AliasName="CREATED_DT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="CREATED_DATE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastUpdDt"
     PrecisionRule="true"
     EntityAttrName="LastUpdDt"
     EntityUsage="AvailApiOverridesEO"
-    AliasName="LAST_UPD_DT"/>
+    AliasName="LAST_UPD_DT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LAST_UPDATE_DATE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastUpdUser"
     PrecisionRule="true"
     EntityAttrName="LastUpdUser"
     EntityUsage="AvailApiOverridesEO"
-    AliasName="LAST_UPD_USER"/>
+    AliasName="LAST_UPD_USER">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LAST_UPDATE_USER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="LastUpdPgm"
     PrecisionRule="true"
     EntityAttrName="LastUpdPgm"
     EntityUsage="AvailApiOverridesEO"
-    AliasName="LAST_UPD_PGM"/>
+    AliasName="LAST_UPD_PGM">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="LAST_UPDATE_PROGRAM"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SelectedAvailApiOverride"
     IsSelected="false"
@@ -60,5 +88,16 @@
     Type="java.lang.Boolean"
     ColumnType="NUMBER"
     AliasName="VIEW_ATTR"
-    SQLType="BIT"/>
+    SQLType="BIT">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="SELECT_AVAILABLE_API_OVERRIDE"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

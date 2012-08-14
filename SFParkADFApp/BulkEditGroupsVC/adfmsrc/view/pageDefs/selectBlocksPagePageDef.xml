@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.60.13" id="selectBlocksPagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BlocksRoVO1" RangeSize="25"
+              DataControl="GroupsAMDataControl" id="BlocksRoVO1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="BlocksRoVO1Iterator" id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="BlocksRoVO1Iterator" id="BlocksRoVO1">
+      <nodeDefinition DefName="model.bulkeditgroups.views.BlocksRoVO"
+                      Name="BlocksRoVO10">
+        <AttrNames>
+          <Item Value="BlockId"/>
+          <Item Value="AreaType"/>
+          <Item Value="PmDistrictId"/>
+          <Item Value="BlockNum"/>
+          <Item Value="StreetId"/>
+          <Item Value="StreetName"/>
+          <Item Value="FmAddrNo"/>
+          <Item Value="ToAddrNo"/>
+          <Item Value="SdeId"/>
+          <Item Value="NeighborhoodId"/>
+          <Item Value="SelectedBlockRow" Binds="SelectedBlockRow"/>
+          <Item Value="BlockDesc"/>
+          <Item Value="PmDistrictName"/>
+          <Item Value="NeighborhoodName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="BlocksRoVO1Iterator" id="SelectedBlockRow"
+            DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="SelectedBlockRow"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+  </bindings>
+</pageDefinition>

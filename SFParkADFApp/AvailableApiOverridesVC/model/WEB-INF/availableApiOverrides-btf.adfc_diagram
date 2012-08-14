@@ -1,0 +1,71 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">ManageAvailableApiOverridesPage</property>
+      <property
+         name="page">/ManageAvailableApiOverridesPage.jspx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>ManageAvailableApiOverridesPage&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">226.59766</property>
+      <property
+         name="x">419.0</property>
+   </View>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">availableApiOverridesReturn</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>availableApiOverridesReturn&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  availableApiOverridesReturn&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">226.24707</property>
+      <property
+         name="x">644.0</property>
+   </TaskFlowReturn>
+   <note
+      id="note4">
+      <property
+         name="sdm:nodeHeight">80.0</property>
+      <property
+         name="label">
+         <![CDATA[<html>
+  <head>
+
+  </head>
+  <body>
+    <p style="margin-top: 0">
+      <font color="#000000" size="3" face="Dialog">The task return is only 
+      placed
+</font>    </p>
+    <p style="margin-top: 0">
+      <font color="#000000" size="3" face="Dialog">here to prevent errors. 
+      Otherwise,
+</font>    </p>
+    <p style="margin-top: 0">
+      <font color="#000000" size="3" face="Dialog">there is nothing to return 
+      to.</font>
+    </p>
+  </body>
+</html>
+]]>
+      </property>
+      <property
+         name="y">88.0</property>
+      <property
+         name="sdm:nodeWidth">199.0</property>
+      <property
+         name="x">609.5</property>
+   </note>
+</SDM>

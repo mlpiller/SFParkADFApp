@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/public_html/WEB-INF
+END
+select-parking-spaces-for-group-btf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/public_html/WEB-INF/select-parking-spaces-for-group-btf.xml
+END
+faces-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/public_html/WEB-INF/faces-config.xml
+END
+weblogic.xml
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/public_html/WEB-INF/weblogic.xml
+END
+select-blocks-for-block-group-btf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/public_html/WEB-INF/select-blocks-for-block-group-btf.xml
+END
+trinidad-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/public_html/WEB-INF/trinidad-config.xml
+END
+adfc-config.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/public_html/WEB-INF/adfc-config.xml
+END
+select-parking-spaces-from-meter-rate-schedules-for-group-btf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 137
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/public_html/WEB-INF/select-parking-spaces-from-meter-rate-schedules-for-group-btf.xml
+END
+select-parking-spaces-from-meter-op-schedules-for-group-btf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/public_html/WEB-INF/select-parking-spaces-from-meter-op-schedules-for-group-btf.xml
+END
+web.xml
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/public_html/WEB-INF/web.xml
+END
+edit-group-header-btf.xml
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/public_html/WEB-INF/edit-group-header-btf.xml
+END

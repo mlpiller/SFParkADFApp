@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelGroupLayout layout="vertical" id="pgl1">
+          <af:panelHeader text="OP Schedules > Select Parking Spaces for PS Group: #{pageFlowScope.groupName}" id="ph1">
+            <af:query id="qryId1" headerText="Search" disclosed="true"
+                      value="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                      model="#{bindings.ImplicitViewCriteriaQuery.queryModel}"
+                      queryListener="#{SelectMeterOpSchedulesBean.onQueryListenerHandler}"
+                      queryOperationListener="#{bindings.ImplicitViewCriteriaQuery.processQueryOperation}"
+                      resultComponentId="::resId1" rows="9" maxColumns="3"
+                      binding="#{SelectMeterOpSchedulesBean.meterOpScheduleQuery}"/>
+          </af:panelHeader>
+          <af:group id="meterOpSchedButtons_g">
+            <af:commandButton text="Save Selections"
+                              id="saveSelectedParkingSpaces_cb"
+                              actionListener="#{SelectMeterOpSchedulesBean.saveSelectedParkingSpacesButtonHandler}"/>
+            <af:commandButton text="Select All Parking Spaces"
+                              id="selectAllParkingSpaces_cb"
+                              actionListener="#{SelectMeterOpSchedulesBean.selectAllParkingSpacesButtonHandler}"/>
+            <af:commandButton text="Cancel Selections"
+                              id="cancelParkingSpacesSelections_cb"
+                              actionListener="#{SelectMeterOpSchedulesBean.cancelParkingSpaceSelectionsButtonHandler}"/>
+          </af:group>
+          <af:group id="meterOpSchedQueryResults_g">
+            <af:spacer width="10" height="10" id="s1"/>
+            <af:outputText value="Query Results Row Count #{bindings.MeterOpScheduleRoVO1.estimatedRowCount}"
+                           id="parkingSpaceRow_count_ot"
+                           partialTriggers="qryId1 resId1"/>
+          </af:group>
+          <af:panelGroupLayout id="pgl2" layout="scroll">
+            <af:table value="#{bindings.MeterOpScheduleRoVO1.collectionModel}"
+                      var="row"
+                      rows="#{bindings.MeterOpScheduleRoVO1.rangeSize}"
+                      emptyText="#{bindings.MeterOpScheduleRoVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.MeterOpScheduleRoVO1.rangeSize}"
+                      rowBandingInterval="0"
+                      filterModel="#{bindings.ImplicitViewCriteriaQuery.queryDescriptor}"
+                      queryListener="#{bindings.ImplicitViewCriteriaQuery.processQuery}"
+                      filterVisible="true" varStatus="vs"
+                      selectionListener="#{bindings.MeterOpScheduleRoVO1.collectionModel.makeCurrent}"
+                      rowSelection="multiple" id="resId1"
+                      styleClass="AFStretchWidth"
+                      binding="#{SelectMeterOpSchedulesBean.meterOpSchedulesTable}">
+              <af:column headerText="#{bindings.MeterOpScheduleRoVO1.hints.SelectedMeterOpScheduleRow.label}"
+                         id="c1" align="center"
+                         filterFeatures="caseInsensitive">
+                <af:selectBooleanCheckbox value="#{row.bindings.SelectedMeterOpScheduleRow.inputValue}"
+                                          label="#{row.bindings.SelectedMeterOpScheduleRow.label}"
+                                          shortDesc="#{bindings.MeterOpScheduleRoVO1.hints.SelectedMeterOpScheduleRow.tooltip}"
+                                          id="sbc1"/>
+              </af:column>
+              <af:column sortProperty="PostId" sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.PostId.label}"
+                         id="resId1c13" filterFeatures="caseInsensitive"
+                         filterable="true">
+                <af:outputText value="#{row.PostId}" id="ot15"/>
+              </af:column>
+              <af:column sortProperty="SchedType" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.SchedType.label}"
+                         id="resId1c3" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.SchedType}" id="ot18"/>
+              </af:column>
+              <af:column sortProperty="EffFromDt" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.EffFromDt.label}"
+                         id="resId1c4" filterFeatures="caseInsensitive">
+                <f:facet name="filter">
+                  <af:inputDate value="#{vs.filterCriteria.EffFromDt}"
+                                id="id1"/>
+                </f:facet>
+                <af:outputText value="#{row.EffFromDt}" id="ot24">
+                  <af:convertDateTime pattern="#{bindings.MeterOpScheduleRoVO1.hints.EffFromDt.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="EffToDt" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.EffToDt.label}"
+                         id="resId1c5" filterFeatures="caseInsensitive">
+                <f:facet name="filter">
+                  <af:inputDate value="#{vs.filterCriteria.EffToDt}" id="id2"/>
+                </f:facet>
+                <af:outputText value="#{row.EffToDt}" id="ot28">
+                  <af:convertDateTime pattern="#{bindings.MeterOpScheduleRoVO1.hints.EffToDt.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="ColorRuleApplied" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.ColorRuleApplied.label}"
+                         id="resId1c6" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.ColorRuleApplied}" id="ot7"/>
+              </af:column>
+              <af:column sortProperty="AltAddlDesc" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.AltAddlDesc.label}"
+                         id="resId1c7" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.AltAddlDesc}" id="ot11"/>
+              </af:column>
+              <af:column sortProperty="FromTime" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.FromTime.label}"
+                         id="resId1c8" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.FromTime}" id="ot1">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MeterOpScheduleRoVO1.hints.FromTime.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="ToTime" filterable="true" sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.ToTime.label}"
+                         id="resId1c9" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.ToTime}" id="ot17">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MeterOpScheduleRoVO1.hints.ToTime.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="DaysApplied" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.DaysApplied.label}"
+                         id="resId1c10" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.DaysApplied}" id="ot27"/>
+              </af:column>
+              <af:column headerText="#{bindings.MeterOpScheduleRoVO1.hints.Timelimitdesc.label}"
+                         id="c3" sortable="true" sortProperty="Timelimitdesc"
+                         filterFeatures="caseInsensitive" filterable="true">
+                <af:outputText value="#{row.Timelimitdesc}" id="ot31"/>
+              </af:column>
+              <af:column headerText="#{bindings.MeterOpScheduleRoVO1.hints.Prepaymenttimedesc.label}"
+                         id="c2" sortable="true"
+                         sortProperty="Prepaymenttimedesc"
+                         filterFeatures="caseInsensitive" filterable="true">
+                <af:outputText value="#{row.Prepaymenttimedesc}" id="ot30"/>
+              </af:column>
+              <af:column sortProperty="MsPayStationId" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.MsPayStationId.label}"
+                         id="resId1c14" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.MsPayStationId}" id="ot8"/>
+              </af:column>
+              <af:column sortProperty="MsSpaceNum" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.MsSpaceNum.label}"
+                         id="resId1c15" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.MsSpaceNum}" id="ot22">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MeterOpScheduleRoVO1.hints.MsSpaceNum.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="SensorFlag" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.SensorFlag.label}"
+                         id="resId1c16" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.SensorFlag}" id="ot4"/>
+              </af:column>
+              <af:column sortProperty="OnOffstreetType" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.OnOffstreetType.label}"
+                         id="resId1c17" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.OnOffstreetType}" id="ot2"/>
+              </af:column>
+              <af:column sortProperty="Jurisdiction" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.Jurisdiction.label}"
+                         id="resId1c18" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.Jurisdiction}" id="ot25"/>
+              </af:column>
+              <af:column sortProperty="PmDistrictName" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.PmDistrictName.label}"
+                         id="resId1c19" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.PmDistrictName}" id="ot10"/>
+              </af:column>
+              <af:column sortProperty="BlockfaceId" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.BlockfaceId.label}"
+                         id="resId1c20" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.BlockfaceId}" id="ot20">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.MeterOpScheduleRoVO1.hints.BlockfaceId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="ActiveMeterFlag" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.ActiveMeterFlag.label}"
+                         id="resId1c21" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.ActiveMeterFlag}" id="ot29"/>
+              </af:column>
+              <af:column sortProperty="SmartMeterFlag" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.SmartMeterFlag.label}"
+                         id="resId1c22" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.SmartMeterFlag}" id="ot3"/>
+              </af:column>
+              <af:column sortProperty="MeterType" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.MeterType.label}"
+                         id="resId1c23" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.MeterType}" id="ot23"/>
+              </af:column>
+              <af:column sortProperty="MeterVendor" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.MeterVendor.label}"
+                         id="resId1c24" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.MeterVendor}" id="ot9"/>
+              </af:column>
+              <af:column sortProperty="MeterModel" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.MeterModel.label}"
+                         id="resId1c25" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.MeterModel}" id="ot5"/>
+              </af:column>
+              <af:column sortProperty="CapColor" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.CapColor.label}"
+                         id="resId1c26" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.CapColor}" id="ot16"/>
+              </af:column>
+              <af:column sortProperty="PcoBeat" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.PcoBeat.label}"
+                         id="resId1c27" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.PcoBeat}" id="ot26"/>
+              </af:column>
+              <af:column sortProperty="OldRateArea" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.OldRateArea.label}"
+                         id="resId1c28" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.OldRateArea}" id="ot19"/>
+              </af:column>
+              <af:column sortProperty="StreetBlock" filterable="true"
+                         sortable="true"
+                         headerText="#{bindings.MeterOpScheduleRoVO1.hints.StreetBlock.label}"
+                         id="resId1c29" filterFeatures="caseInsensitive">
+                <af:outputText value="#{row.StreetBlock}" id="ot21"/>
+              </af:column>
+            </af:table>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

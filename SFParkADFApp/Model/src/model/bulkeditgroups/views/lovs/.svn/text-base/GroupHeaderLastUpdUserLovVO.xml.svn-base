@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="GroupHeaderLastUpdUserLovVO"
+  Version="11.1.1.60.13"
+  OrderBy="LAST_UPD_USER"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.bulkeditgroups.views.lovs.GroupHeaderLastUpdUserLovVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="GroupHeaderLastUpdUserLovVO1"
+    ViewObjectName="model.bulkeditgroups.views.lovs.GroupHeaderLastUpdUserLovVO"
+    RowLevelBinds="true"/>
+  <SQLQuery>
+    <![CDATA[SELECT DISTINCT LAST_UPD_USER FROM GROUP_HEADER
+UNION
+SELECT '' FROM DUAL]]>
+  </SQLQuery>
+  <ViewAttribute
+    Name="LastUpdUser"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="30"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="LAST_UPD_USER"
+    Expression="LAST_UPD_USER"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

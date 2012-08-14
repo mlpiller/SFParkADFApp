@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/src/bulkeditgroups/backing
+END
+SelectMeterRateSchedules.java
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/src/bulkeditgroups/backing/SelectMeterRateSchedules.java
+END
+SelectMeterOpSchedules.java
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/src/bulkeditgroups/backing/SelectMeterOpSchedules.java
+END
+SelectParkingSpaces.java
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/src/bulkeditgroups/backing/SelectParkingSpaces.java
+END
+GroupHeaderListing.java
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/src/bulkeditgroups/backing/GroupHeaderListing.java
+END
+EditGroupHeader.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/src/bulkeditgroups/backing/EditGroupHeader.java
+END
+SelectBlocksPage.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/SFParkADFApp/!svn/ver/2/trunk/BulkEditGroupsVC/src/bulkeditgroups/backing/SelectBlocksPage.java
+END

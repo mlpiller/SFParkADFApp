@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="groupHeaderListing">
+    <description id="__77">Display the header (GROUP_HEADER) and details (either BLOCK_GROUPS or PARKING_SPACE_GROUPS).
+This is the starting place to add/edit/delete groups and the group details.</description>
+    <display-name id="__45">Group Header Listing</display-name>
+    <page>/groupHeaderListingPage.jspx</page>
+  </view>
+  <task-flow-call id="edit-group-header-btf">
+    <task-flow-reference>
+      <document>/WEB-INF/edit-group-header-btf.xml</document>
+      <id>edit-group-header-btf</id>
+    </task-flow-reference>
+    <input-parameter id="__25">
+      <name>action</name>
+      <value>#{pageFlowScope.action}</value>
+    </input-parameter>
+    <input-parameter id="__26">
+      <name>lastUpdatedBy</name>
+      <value>#{pageFlowScope.lastUpdatedBy}</value>
+    </input-parameter>
+    <input-parameter id="__27">
+      <name>lastUpdateProgram</name>
+      <value>#{pageFlowScope.lastUpdateProgram}</value>
+    </input-parameter>
+    <return-value id="__46">
+      <name>userAction</name>
+      <value>#{viewScope.GroupHeaderListingBean.userAddEditGroupAction}</value>
+    </return-value>
+    <run-as-dialog>
+      <display-type id="__37">
+        <inline-popup/>
+      </display-type>
+    </run-as-dialog>
+  </task-flow-call>
+  <method-call id="Commit">
+    <method>#{bindings.Commit.execute}</method>
+    <outcome id="__9">
+      <fixed-outcome>Commit</fixed-outcome>
+    </outcome>
+  </method-call>
+  <task-flow-call id="select-blocks-for-block-group-btf">
+    <description id="__81">This selects blocks not already assigned to the targeted group id.</description>
+    <display-name id="__80">Select Blocks from the BLOCKS table</display-name>
+    <task-flow-reference>
+      <document>/WEB-INF/select-blocks-for-block-group-btf.xml</document>
+      <id>select-blocks-for-block-group-btf</id>
+    </task-flow-reference>
+    <input-parameter id="__51">
+      <name>groupName</name>
+      <value>#{viewScope.GroupHeaderListingBean.groupName}</value>
+    </input-parameter>
+    <input-parameter id="__66">
+      <name>groupId</name>
+      <value>#{viewScope.GroupHeaderListingBean.groupId}</value>
+    </input-parameter>
+    <return-value id="__48">
+      <name>userAction</name>
+      <value>#{viewScope.GroupHeaderListingBean.userAddBlocksAction}</value>
+    </return-value>
+    <run-as-dialog>
+      <display-type id="__36">
+        <inline-popup/>
+      </display-type>
+    </run-as-dialog>
+  </task-flow-call>
+  <task-flow-call id="select-parking-spaces-for-group-btf">
+    <description id="__83">This selects from the parking space inventory values not already assigned to the targeted group id.</description>
+    <display-name id="__82">Select Parking Spaces from the PARKING_SPACE_INVENTORY table</display-name>
+    <task-flow-reference>
+      <document>/WEB-INF/select-parking-spaces-for-group-btf.xml</document>
+      <id>select-parking-spaces-for-group-btf</id>
+    </task-flow-reference>
+    <input-parameter id="__50">
+      <name>groupName</name>
+      <value>#{viewScope.GroupHeaderListingBean.groupName}</value>
+    </input-parameter>
+    <input-parameter id="__65">
+      <name>groupId</name>
+      <value>#{viewScope.GroupHeaderListingBean.groupId}</value>
+    </input-parameter>
+    <return-value id="__49">
+      <name>userAction</name>
+      <value>#{viewScope.GroupHeaderListingBean.userAddParkingSpacesAction}</value>
+    </return-value>
+    <run-as-dialog>
+      <display-type id="__47">
+        <inline-popup/>
+      </display-type>
+    </run-as-dialog>
+  </task-flow-call>
+  <task-flow-call id="select-parking-spaces-from-meter-rate-schedules-for-group-btf">
+    <description id="__84">This selects only from the active meter rate schedules and only values not already assigned to the targeted group id.</description>
+    <display-name id="__85">Select Parking Spaces from the METER_RATE_SCHED table</display-name>
+    <task-flow-reference>
+      <document>/WEB-INF/select-parking-spaces-from-meter-rate-schedules-for-group-btf.xml</document>
+      <id>select-parking-spaces-from-meter-rate-schedules-for-group-btf</id>
+    </task-flow-reference>
+    <input-parameter id="__61">
+      <name>groupName</name>
+      <value>#{viewScope.GroupHeaderListingBean.groupName}</value>
+    </input-parameter>
+    <input-parameter id="__67">
+      <name>groupId</name>
+      <value>#{viewScope.GroupHeaderListingBean.groupId}</value>
+    </input-parameter>
+    <return-value id="__62">
+      <name>userAction</name>
+      <value>#{viewScope.GroupHeaderListingBean.userAddParkingSpacesAction}</value>
+    </return-value>
+    <run-as-dialog>
+      <display-type id="__63">
+        <inline-popup/>
+      </display-type>
+    </run-as-dialog>
+  </task-flow-call>
+  <task-flow-call id="select-parking-spaces-from-meter-op-schedules-for-group-btf">
+    <description id="__79">This selects only from the active meter operation schedules and only values not already assigned to the targeted group id.</description>
+    <display-name id="__78">Select Parking Spaces from the METER_OP_SCHED table</display-name>
+    <task-flow-reference>
+      <document>/WEB-INF/select-parking-spaces-from-meter-op-schedules-for-group-btf.xml</document>
+      <id>select-parking-spaces-from-meter-op-schedules-for-group-btf</id>
+    </task-flow-reference>
+    <input-parameter id="__74">
+      <name>groupId</name>
+      <value>#{viewScope.GroupHeaderListingBean.groupId}</value>
+    </input-parameter>
+    <input-parameter id="__75">
+      <name>groupName</name>
+      <value>#{viewScope.GroupHeaderListingBean.groupName}</value>
+    </input-parameter>
+    <return-value id="__76">
+      <name>userAction</name>
+      <value>#{viewScope.GroupHeaderListingBean.userAddParkingSpacesAction}</value>
+    </return-value>
+    <run-as-dialog>
+      <display-type id="__22">
+        <inline-popup/>
+      </display-type>
+    </run-as-dialog>
+  </task-flow-call>
+  <control-flow-rule id="__5">
+    <from-activity-id id="__6">groupHeaderListing</from-activity-id>
+    <control-flow-case id="__8">
+      <from-outcome id="__23">Group Header Action</from-outcome>
+      <to-activity-id id="__7">edit-group-header-btf</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__11">
+      <from-outcome id="__12">Validate and Save</from-outcome>
+      <to-activity-id id="__10">Commit</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__28">
+      <from-outcome id="__30">Add Blocks</from-outcome>
+      <to-activity-id id="__29">select-blocks-for-block-group-btf</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__24">
+      <from-outcome id="__39">Add Parking Spaces</from-outcome>
+      <to-activity-id id="__38">select-parking-spaces-for-group-btf</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__53">
+      <from-outcome id="__54">Add Meter Rate Schedules</from-outcome>
+      <to-activity-id id="__52">select-parking-spaces-from-meter-rate-schedules-for-group-btf</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__64">
+      <from-outcome id="__68">Add Meter Op Schedules</from-outcome>
+      <to-activity-id id="__60">select-parking-spaces-from-meter-op-schedules-for-group-btf</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__13">
+    <from-activity-id id="__14">edit-group-header-btf</from-activity-id>
+    <control-flow-case id="__17">
+      <to-activity-id id="__16">groupHeaderListing</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__15">
+    <from-activity-id id="__18">Commit</from-activity-id>
+    <control-flow-case id="__20">
+      <from-outcome id="__19">Commit</from-outcome>
+      <to-activity-id id="__21">groupHeaderListing</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__31">
+    <from-activity-id id="__32">select-blocks-for-block-group-btf</from-activity-id>
+    <control-flow-case id="__34">
+      <from-outcome id="__35">selectBlocksReturn</from-outcome>
+      <to-activity-id id="__33">groupHeaderListing</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__40">
+    <from-activity-id id="__41">select-parking-spaces-for-group-btf</from-activity-id>
+    <control-flow-case id="__44">
+      <from-outcome id="__42">selectParkingSpacesReturn</from-outcome>
+      <to-activity-id id="__43">groupHeaderListing</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__55">
+    <from-activity-id id="__56">select-parking-spaces-from-meter-rate-schedules-for-group-btf</from-activity-id>
+    <control-flow-case id="__57">
+      <from-outcome id="__59">selectMeterRateSchedulesReturn</from-outcome>
+      <to-activity-id id="__58">groupHeaderListing</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__69">
+    <from-activity-id id="__70">select-parking-spaces-from-meter-op-schedules-for-group-btf</from-activity-id>
+    <control-flow-case id="__71">
+      <from-outcome id="__72">selectMeterOpSchedulesReturn</from-outcome>
+      <to-activity-id id="__73">groupHeaderListing</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__2">
+    <managed-bean-name id="__4">GroupHeaderListingBean</managed-bean-name>
+    <managed-bean-class id="__3">bulkeditgroups.backing.GroupHeaderListing</managed-bean-class>
+    <managed-bean-scope id="__1">view</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.60.13" id="editGroupHeaderPagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="GroupHeaderUpdtVO1" RangeSize="25"
+              DataControl="GroupsAMDataControl"
+              id="GroupHeaderUpdtVO1Iterator" ChangeEventPolicy="ppr"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="GroupHeaderUpdtVO1Iterator" id="GroupId">
+      <AttrNames>
+        <Item Value="GroupId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="GroupHeaderUpdtVO1Iterator" id="GroupName">
+      <AttrNames>
+        <Item Value="GroupName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="GroupHeaderUpdtVO1Iterator" id="GroupDesc">
+      <AttrNames>
+        <Item Value="GroupDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="GroupHeaderUpdtVO1Iterator" id="EffFromDt">
+      <AttrNames>
+        <Item Value="EffFromDt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="GroupHeaderUpdtVO1Iterator" id="EffToDt">
+      <AttrNames>
+        <Item Value="EffToDt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="GroupHeaderUpdtVO1Iterator" id="CreatedDt">
+      <AttrNames>
+        <Item Value="CreatedDt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="GroupHeaderUpdtVO1Iterator" id="LastUpdDt">
+      <AttrNames>
+        <Item Value="LastUpdDt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="GroupHeaderUpdtVO1Iterator" id="LastUpdUser">
+      <AttrNames>
+        <Item Value="LastUpdUser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="GroupHeaderUpdtVO1Iterator" id="LastUpdPgm">
+      <AttrNames>
+        <Item Value="LastUpdPgm"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="GroupHeaderUpdtVO1Iterator" id="First"
+            RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="GroupHeaderUpdtVO1Iterator" id="Previous"
+            RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="GroupHeaderUpdtVO1Iterator" id="Next"
+            RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="GroupHeaderUpdtVO1Iterator" id="Last"
+            RequiresUpdateModel="true" Action="last"/>
+    <list IterBinding="GroupHeaderUpdtVO1Iterator" id="GroupType1"
+          DTSupportsMRU="true" StaticList="true">
+      <AttrNames>
+        <Item Value="GroupType"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="BLOCK"/>
+        <Item Value="PRK_SPACE"/>
+      </ValueList>
+    </list>
+  </bindings>
+</pageDefinition>

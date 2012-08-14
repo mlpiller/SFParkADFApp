@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.60.13" id="selectMeterOpSchedulesPagePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MeterOpScheduleRoVO1" RangeSize="25"
+              DataControl="GroupsAMDataControl"
+              id="MeterOpScheduleRoVO1Iterator"/>
+    <searchRegion Criteria="__ImplicitViewCriteria__"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="MeterOpScheduleRoVO1Iterator"
+                  id="ImplicitViewCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="MeterOpScheduleRoVO1Iterator" id="MeterOpScheduleRoVO1">
+      <nodeDefinition DefName="model.bulkeditgroups.views.MeterOpScheduleRoVO"
+                      Name="MeterOpScheduleRoVO10">
+        <AttrNames>
+          <Item Value="MeterOpSchedId"/>
+          <Item Value="ParkingSpaceId"/>
+          <Item Value="SchedType"/>
+          <Item Value="EffFromDt"/>
+          <Item Value="EffToDt"/>
+          <Item Value="ColorRuleApplied"/>
+          <Item Value="AltAddlDesc"/>
+          <Item Value="FromTime"/>
+          <Item Value="ToTime"/>
+          <Item Value="DaysApplied"/>
+          <Item Value="TimeLimit"/>
+          <Item Value="PrepaymentTime"/>
+          <Item Value="PostId"/>
+          <Item Value="MsPayStationId"/>
+          <Item Value="MsSpaceNum"/>
+          <Item Value="SensorFlag"/>
+          <Item Value="OnOffstreetType"/>
+          <Item Value="Jurisdiction"/>
+          <Item Value="PmDistrictName"/>
+          <Item Value="BlockfaceId"/>
+          <Item Value="ActiveMeterFlag"/>
+          <Item Value="SmartMeterFlag"/>
+          <Item Value="MeterType"/>
+          <Item Value="MeterVendor"/>
+          <Item Value="MeterModel"/>
+          <Item Value="CapColor"/>
+          <Item Value="PcoBeat"/>
+          <Item Value="OldRateArea"/>
+          <Item Value="StreetBlock"/>
+          <Item Value="SelectedMeterOpScheduleRow"
+                Binds="SelectedMeterOpScheduleRow"/>
+          <Item Value="Prepaymenttimedesc"/>
+          <Item Value="Timelimitdesc"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <button IterBinding="MeterOpScheduleRoVO1Iterator"
+            id="SelectedMeterOpScheduleRow" DTSupportsMRU="false"
+            StaticList="true">
+      <AttrNames>
+        <Item Value="SelectedMeterOpScheduleRow"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="true"/>
+        <Item Value="false"/>
+      </ValueList>
+    </button>
+  </bindings>
+</pageDefinition>

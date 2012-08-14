@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="edit-group-header-btf">
+    <default-activity id="__1">routeAction</default-activity>
+    <transaction id="__46">
+      <new-transaction/>
+    </transaction>
+    <input-parameter-definition id="__6">
+      <name id="__5">action</name>
+      <value>#{pageFlowScope.action}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__8">
+      <name id="__7">lastUpdatedBy</name>
+      <value>#{pageFlowScope.lastUpdatedBy}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <input-parameter-definition id="__9">
+      <name id="__10">lastUpdateProgram</name>
+      <value>#{pageFlowScope.lastUpdateProgram}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <return-value-definition id="__44">
+      <name id="__45">userAction</name>
+      <value>#{EditGroupHeaderBean.userAction}</value>
+      <class>java.lang.String</class>
+    </return-value-definition>
+    <managed-bean id="__12">
+      <managed-bean-name id="__11">EditGroupHeaderBean</managed-bean-name>
+      <managed-bean-class id="__14">bulkeditgroups.backing.EditGroupHeader</managed-bean-class>
+      <managed-bean-scope id="__13">request</managed-bean-scope>
+    </managed-bean>
+    <router id="routeAction">
+      <case>
+        <expression>#{pageFlowScope.action == 'Edit'}</expression>
+        <outcome id="__37">edit</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.action == 'Add'}</expression>
+        <outcome id="__38">add</outcome>
+      </case>
+      <default-outcome>edit</default-outcome>
+    </router>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome id="__2">
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="editGroupHeader">
+      <page>/editGroupHeaderPage.jspx</page>
+    </view>
+    <task-flow-return id="submit">
+      <outcome id="__3">
+        <name>submit</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="cancel">
+      <outcome id="__4">
+        <name>cancel</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <method-call id="Commit">
+      <method>#{bindings.Commit.execute}</method>
+      <outcome id="__19">
+        <fixed-outcome>Commit</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__15">
+      <from-activity-id id="__16">routeAction</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome id="__20">add</from-outcome>
+        <to-activity-id id="__18">CreateInsert</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__22">
+        <from-outcome id="__23">edit</from-outcome>
+        <to-activity-id id="__21">editGroupHeader</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__24">
+      <from-activity-id id="__25">CreateInsert</from-activity-id>
+      <control-flow-case id="__28">
+        <from-outcome id="__26">CreateInsert</from-outcome>
+        <to-activity-id id="__27">editGroupHeader</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__29">
+      <from-activity-id id="__30">editGroupHeader</from-activity-id>
+      <control-flow-case id="__32">
+        <from-outcome id="__33">submit</from-outcome>
+        <to-activity-id id="__31">Commit</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__34">
+        <from-outcome id="__36">cancel</from-outcome>
+        <to-activity-id id="__35">cancel</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__39">
+      <from-activity-id id="__40">Commit</from-activity-id>
+      <control-flow-case id="__41">
+        <from-outcome id="__42">Commit</from-outcome>
+        <to-activity-id id="__43">submit</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

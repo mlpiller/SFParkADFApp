@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.60.13" id="DataBindings" SeparateXMLFiles="false"
+             Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/groupHeaderListingPage.jspx"
+          usageId="view_groupHeaderListingPagePageDef"/>
+    <page path="/WEB-INF/edit-group-header-btf.xml#edit-group-header-btf@CreateInsert"
+          usageId="view_edit_group_header_btf_edit_group_header_btf_CreateInsertPageDef"/>
+    <page path="/editGroupHeaderPage.jspx"
+          usageId="view_editGroupHeaderPagePageDef"/>
+    <page path="/WEB-INF/edit-group-header-btf.xml#edit-group-header-btf@Commit"
+          usageId="view_edit_group_header_btf_edit_group_header_btf_CommitPageDef"/>
+    <page path="PageFlow#Commit" usageId="view_adfc_config___CommitPageDef"/>
+    <page path="/selectBlocksPage.jspx" usageId="view_selectBlocksPagePageDef"/>
+    <page path="/selectParkingSpacesPage.jspx"
+          usageId="view_selectParkingSpacesPagePageDef"/>
+    <page path="/selectMeterRateSchedulesPage.jspx"
+          usageId="view_selectMeterRateSchedulesPagePageDef"/>
+    <page path="/selectMeterOpSchedulesPage.jspx"
+          usageId="view_selectMeterOpSchedulesPagePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_groupHeaderListingPagePageDef"
+          path="view.pageDefs.groupHeaderListingPagePageDef"/>
+    <page id="view_edit_group_header_btf_edit_group_header_btf_CreateInsertPageDef"
+          path="view.pageDefs.edit_group_header_btf_edit_group_header_btf_CreateInsertPageDef"/>
+    <page id="view_editGroupHeaderPagePageDef"
+          path="view.pageDefs.editGroupHeaderPagePageDef"/>
+    <page id="view_edit_group_header_btf_edit_group_header_btf_CommitPageDef"
+          path="view.pageDefs.edit_group_header_btf_edit_group_header_btf_CommitPageDef"/>
+    <page id="view_adfc_config___CommitPageDef"
+          path="view.pageDefs.adfc_config___CommitPageDef"/>
+    <page id="view_selectBlocksPagePageDef"
+          path="view.pageDefs.selectBlocksPagePageDef"/>
+    <page id="view_selectParkingSpacesPagePageDef"
+          path="view.pageDefs.selectParkingSpacesPagePageDef"/>
+    <page id="view_selectMeterRateSchedulesPagePageDef"
+          path="view.pageDefs.selectMeterRateSchedulesPagePageDef"/>
+    <page id="view_selectMeterOpSchedulesPagePageDef"
+          path="view.pageDefs.selectMeterOpSchedulesPagePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="GroupsAMDataControl"
+                     Package="model.bulkeditgroups.services"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="GroupsAMLocal"
+                     syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

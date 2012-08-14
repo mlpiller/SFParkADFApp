@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/bulkeditgroups/entities
+END
+GroupHeaderParkingSpaceGroupsAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/bulkeditgroups/entities/GroupHeaderParkingSpaceGroupsAssoc.xml
+END
+ParkingSpaceInventoryEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/bulkeditgroups/entities/ParkingSpaceInventoryEO.xml
+END
+BlockGroupsEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/bulkeditgroups/entities/BlockGroupsEO.xml
+END
+SdoPointType.xml
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/bulkeditgroups/entities/SdoPointType.xml
+END
+ParkingSpaceGroupsEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/bulkeditgroups/entities/ParkingSpaceGroupsEO.xml
+END
+BlockGroupsBlocksAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/bulkeditgroups/entities/BlockGroupsBlocksAssoc.xml
+END
+BlocksEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/bulkeditgroups/entities/BlocksEO.xml
+END
+SdoGeometry.xml
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/bulkeditgroups/entities/SdoGeometry.xml
+END
+GroupHeaderBlockGroupsAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/bulkeditgroups/entities/GroupHeaderBlockGroupsAssoc.xml
+END
+ParkingSpaceGroupsParkingSpacesAssoc.xml
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/bulkeditgroups/entities/ParkingSpaceGroupsParkingSpacesAssoc.xml
+END
+GroupHeaderEO.xml
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/SFParkADFApp/!svn/ver/2/trunk/Model/src/model/bulkeditgroups/entities/GroupHeaderEO.xml
+END
